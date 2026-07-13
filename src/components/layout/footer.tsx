@@ -11,6 +11,7 @@ const socialLinks = [
 
 export function Footer() {
   const whatsappLink = `https://wa.me/${companyInfo.phoneRaw}`
+  const whatsappLinkNE = `https://wa.me/${companyInfo.phoneNERaw}`
 
   return (
     <footer className="bg-dark-500 border-t border-white/5">
@@ -21,14 +22,14 @@ export function Footer() {
               <Image
                 src="/logo.svg"
                 alt="Grupo Suprimmil"
-                width={160}
-                height={40}
-                className="h-8 w-auto"
+                width={360}
+                height={90}
+                className="h-16 w-auto"
               />
             </Link>
             <p className="text-sm text-light-400 leading-relaxed max-w-xs">
-              Engenharia, suprimentos, construção, montagem eletromecânica e
-              manutenção industrial desde 2010.
+              Holding de empresas de metalmecânica e eletromecânica com atuação
+              em 3 estados — Pará, Ceará e São Paulo — desde 2010.
             </p>
           </div>
 
@@ -54,7 +55,8 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Contato
             </h3>
-            <ul className="space-y-3">
+            <p className="text-xs text-light-500 uppercase tracking-wider mb-2">Norte</p>
+            <ul className="space-y-3 mb-6">
               <li>
                 <a
                   href={whatsappLink}
@@ -68,29 +70,34 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={`tel:${companyInfo.phoneAlt.replace(/\D/g, "")}`}
+                  href={`mailto:${companyInfo.emailComercial}`}
+                  className="flex items-start gap-2 text-sm text-light-400 hover:text-accent-500 transition-colors"
+                >
+                  <Mail className="h-4 w-4 mt-0.5 shrink-0 text-accent-500" />
+                  <span>{companyInfo.emailComercial}</span>
+                </a>
+              </li>
+            </ul>
+            <p className="text-xs text-light-500 uppercase tracking-wider mb-2">Nordeste</p>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={whatsappLinkNE}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-start gap-2 text-sm text-light-400 hover:text-accent-500 transition-colors"
                 >
                   <Phone className="h-4 w-4 mt-0.5 shrink-0 text-accent-500" />
-                  <span>{companyInfo.phoneAlt}</span>
+                  <span>{companyInfo.phoneNE}</span>
                 </a>
               </li>
               <li>
                 <a
-                  href={`mailto:${companyInfo.email}`}
+                  href={`mailto:${companyInfo.emailNEGerencia}`}
                   className="flex items-start gap-2 text-sm text-light-400 hover:text-accent-500 transition-colors"
                 >
                   <Mail className="h-4 w-4 mt-0.5 shrink-0 text-accent-500" />
-                  <span>{companyInfo.email}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${companyInfo.emailVendas}`}
-                  className="flex items-start gap-2 text-sm text-light-400 hover:text-accent-500 transition-colors"
-                >
-                  <Mail className="h-4 w-4 mt-0.5 shrink-0 text-accent-500" />
-                  <span>{companyInfo.emailVendas}</span>
+                  <span>{companyInfo.emailNEGerencia}</span>
                 </a>
               </li>
             </ul>
@@ -103,11 +110,15 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-light-400">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-500" />
-                <span>{companyInfo.addressBarcarena}</span>
+                <span>Barcarena-PA (Matriz): {companyInfo.addressBarcarena}</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-light-400">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-500" />
-                <span>{companyInfo.addressAnanindeua}</span>
+                <span>Ananindeua-PA (Filial): {companyInfo.addressAnanindeua}</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm text-light-400">
+                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent-500" />
+                <span>Maracanaú-CE: {companyInfo.addressCE}</span>
               </li>
             </ul>
 

@@ -1,7 +1,8 @@
 # TODO — Implementação Site Grupo Suprimmil
 
-> Status geral: 🟡 Em andamento — Fase 1
+> Status geral: 🟡 Em andamento — Pós-Fase 1
 > Stack: Next.js 15 + TypeScript + Tailwind v4 + shadcn/ui
+> Versão atual: 0.2.0
 
 ---
 
@@ -14,94 +15,86 @@
 | Modelo de negócio | 100% institucional B2B — sem e-commerce |
 | Formulário de contato | Link `wa.me` (sem Server Action/backend) |
 | Trabalhe Conosco | Link `wa.me` (sem upload de currículo) |
-| Mapa | Google Maps embed (Barcarena + Ananindeua) |
-| Animações | Framer Motion (transições/contadores) + GSAP (timeline empresa) |
+| Mapa | Google Maps embed (Barcarena + Ananindeua + Maracanaú) |
+| Animações | Framer Motion (transições/contadores/gear) + GSAP (timeline empresa — pendente) |
 | PWA | Não — apenas favicon básico |
+| Tema estético | Usinagem — engrenagens (gears) como elemento decorativo |
 | Logo | Cliente fornecerá o arquivo |
 
 ---
 
-## Fase 1 — Setup do Projeto
+## ✅ Concluído (v0.1.0 — v0.2.0)
 
-- [ ] `npx create-next-app@latest` com App Router + TypeScript
-- [ ] Configurar Tailwind CSS v4
-- [ ] Inicializar shadcn/ui (components.json, botão, card, formulário, navbar)
-- [ ] Configurar fontes: Space Grotesk (títulos) + IBM Plex Sans (corpo) via `next/font`
-- [ ] Configurar tema de cores no Tailwind (azul-aço primário, laranja secundário, neutros escuros)
-- [ ] Configurar metadata base do Next.js (layout root)
-- [ ] Configurar schema.org (Organization + LocalBusiness) no layout root
-- [ ] Verificar build funcionando (`npm run build`)
+### Fase 1 — Setup do Projeto
+- Setup Next.js 15 + TypeScript + Tailwind CSS v4 + shadcn/ui
+- Configuração de tema: paleta azul-aço + laranja
+- Fontes: Space Grotesk + IBM Plex Sans
+- Metadata base, schema.org (3 endereços)
 
-## Fase 2 — Layout Base
+### Fase 2 — Layout Base
+- Header fixo com logo, navegação, WhatsApp, CTA
+- Navegação mobile (hamburguer)
+- Footer com endereços (PA + CE), contatos regionais (Norte + Nordeste)
 
-- [ ] Header fixo com logo, navegação, telefone/WhatsApp em destaque, CTA "Fale Conosco"
-- [ ] Footer global com endereços (Barcarena + Ananindeua), e-mails, telefones, WhatsApp, redes sociais, links rápidos
-- [ ] Container responsivo e grid system consistente
-- [ ] Navegação mobile (menu hamburguer)
+### Fase 3 — Home (`/`)
+- Hero com headline + CTA duplo
+- Contadores animados (16+ anos, 5.300+ m², 3 estados)
+- O Grupo (texto multi-empresa)
+- MVV (versão oficial do PPT)
+- Faixa de Certificações (Hydro 2020/2022)
+- Clientes e Parceiros (gear frames animados)
+- Grid Áreas de Atuação (6 áreas)
+- Diferenciais (multi-estado, máquinas, frota)
+- CTA final (Norte + Nordeste)
 
-## Fase 3 — Home (`/`)
+### Fase 4 — Empresa (`/empresa`)
+- Sobre o Grupo (holding multi-empresa, 3 estados)
+- MVV oficial, diferenciais, timeline expandida
 
-- [ ] Hero com headline institucional + subheadline + CTA duplo
-- [ ] Contadores institucionais animados (anos, funcionários, projetos) com `[A CONFIRMAR]`
-- [ ] Bloco "O Grupo" com resumo + link `/empresa`
-- [ ] Missão / Visão / Valores em cards
-- [ ] Grid Áreas de Atuação (6 cards com ícone + título + descrição)
-- [ ] Diferenciais (localização, infraestrutura, equipe, estoque, entrega)
-- [ ] Faixa de CTA final (telefone, e-mail, WhatsApp)
-- [ ] Âncoras internas (`#empresa`, `#servicos`, `#contato`)
+### Fase 5 — Serviços (`/servicos`)
+- 6 áreas de atuação detalhadas
+- Seção Estrutura e Capacidade Técnica (parque de máquinas, frota)
 
-## Fase 4 — Empresa (`/empresa`)
+### Fase 6 — Contato (`/contato`)
+- Dois blocos regionais (Norte + Nordeste)
+- Formulário via wa.me
+- Mapa com 3 unidades (PA + CE)
 
-- [ ] Sobre o Grupo (texto institucional de CONTENT.md)
-- [ ] Missão, Visão e Valores
-- [ ] Diferenciais competitivos
-- [ ] Linha do tempo "Desde 2010"
-- [ ] CTA de contato
+### Fase 7 — Trabalhe Conosco (`/trabalhe-conosco`)
+- Formulário wa.me com seleção de área
+- Select estilizado (shadcn)
 
-## Fase 5 — Serviços (`/servicos`)
+### Fase 8 — SEO Técnico
+- metadata API em todas as páginas
+- sitemap.xml, robots.txt
+- Schema.org com 3 endereços
+- Open Graph
 
-- [ ] Grid detalhado das 6 áreas de atuação:
-  - Engenharia e Projetos
-  - Suprimentos
-  - Construção (montagem eletromecânica, manutenção, overhaul)
-  - Fabricação e Recuperação Mecânica
-  - Usinagem de Peças
-  - Fornecimento de Materiais Metálicos
-- [ ] Cada área com ícone, descrição completa, aplicações
+### Estética — Engrenagens (v0.2.0)
+- Componente GearDecoration (SVG animado com Framer Motion)
+- Gear rotating nos heroes e seções escuras
+- Gear-bg pattern sutil no CSS
+- gear01.svg e gear02.svg como background giratório dos logos (gear01=25s, gear02=18s)
+- Logos estáticos sobrepostos ao gear giratório
 
-## Fase 6 — Contato (`/contato`)
+### Assets
+- Logos de clientes (10) e parceiros (6) em `public/logos/`
+- Nomenclatura: `cliente-NN-nome.svg` / `parceiro-NN-nome.svg`
+- gear01.svg e gear02.svg em `public/logos/`
 
-- [ ] Formulário de contato → link `wa.me` (sem backend)
-- [ ] Mapa Google Maps embed com marcadores duplos (Barcarena + Ananindeua)
-- [ ] Cards de informações: telefones, e-mails, WhatsApp, redes sociais
-- [ ] Layout responsivo
+---
 
-## Fase 7 — Trabalhe Conosco (`/trabalhe-conosco`)
+## 🔶 Pendente
 
-- [ ] Formulário de candidatura → link `wa.me` com mensagem pré-preenchida
-- [ ] Informações sobre vagas
-- [ ] Layout responsivo
-
-## Fase 8 — SEO Técnico
-
-- [ ] `metadata` API em todas as páginas
-- [ ] `sitemap.xml` dinâmico
-- [ ] `robots.txt`
-- [ ] Dados estruturados (schema.org Organization + LocalBusiness) no layout root
-- [ ] Open Graph / Twitter Cards
-
-## Fase 9 — Animações e Polimento
-
-- [ ] Animações com Framer Motion (fade + slide sutis nas seções, contadores animados)
+### Fase 9 — Animações e Polimento
 - [ ] GSAP + ScrollTrigger na linha do tempo da empresa
+- [x] suppressHydrationWarning no `<html>` para evitar mismatch de extensões
 - [ ] Responsividade mobile-first (testar breakpoints)
-- [ ] Acessibilidade: contraste AA, navegação por teclado, `alt` descritivo
-- [ ] Favicon
+- [ ] Acessibilidade: contraste AA, navegação por teclado
 - [ ] Performance: Lighthouse 90+
-- [ ] Revisão de conteúdo pendente (gap list do CONTENT.md §9)
+- [ ] Revisão de conteúdo pendente
 
-## Fase 10 — Deploy
-
+### Fase 10 — Deploy
 - [ ] Deploy na Vercel
 - [ ] Checklist final de conteúdo pendente reportado ao cliente
 
@@ -109,9 +102,13 @@
 
 ## Gap List (conteúdo pendente — reportar ao cliente)
 
-- [ ] Números reais (anos, funcionários, projetos)
+- [ ] Números reais (funcionários, projetos)
 - [ ] Handles de redes sociais
-- [ ] Fotos reais de obras/equipe/instalações
-- [ ] Certificações (ISO, NR, etc.)
-- [ ] Portfólio de clientes (permissão de logos)
-- [ ] CNPJ e razão social para rodapé
+- [ ] Fotos reais de obras/equipe/instalações (8 placeholders)
+- [ ] Nomes exatos dos logos de parceiros não identificados (5)
+- [ ] Autorização de uso de marca de cada cliente/parceiro
+- [ ] Depoimento/avaliação de cliente 2024/25
+- [ ] CNPJ e razão social de cada empresa do grupo
+- [ ] Status da N'Brazil Amortecedores
+- [ ] Coordenadas exatas do Google Maps
+- [ ] Confirmar se contatos legados (vendasv, 3013-7730) continuam ativos

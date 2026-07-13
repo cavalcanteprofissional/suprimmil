@@ -3,12 +3,13 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { GearDecoration } from "@/components/animations/gear-decoration"
 import { companyInfo } from "@/lib/navigation"
 
 export const metadata: Metadata = {
   title: "Trabalhe Conosco",
   description:
-    "Envie seu currículo e faça parte da equipe do Grupo Suprimmil.",
+    "Envie seu currículo e candidate-se a oportunidades no Grupo Suprimmil. Áreas: engenharia, montagem, usinagem, caldeiraria e mais.",
 }
 
 const whatsappLink = `https://wa.me/${companyInfo.phoneRaw}`
@@ -30,7 +31,9 @@ export default function TrabalheConoscoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-dark-500 pt-24 lg:pt-32 pb-16 lg:pb-20">
+      <section className="relative bg-dark-500 pt-24 lg:pt-32 pb-16 lg:pb-20 overflow-hidden">
+        <GearDecoration size={200} speed={35} direction="ccw" opacity={0.04} className="top-0 -right-12 hidden lg:block" />
+        <GearDecoration size={120} speed={20} direction="cw" opacity={0.03} className="bottom-5 -left-6 hidden lg:block" />
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
@@ -126,7 +129,7 @@ export default function TrabalheConoscoPage() {
                       <select
                         id="area"
                         name="area"
-                        className="flex h-9 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                        className="h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                         required
                       >
                         <option value="">Selecione uma área</option>

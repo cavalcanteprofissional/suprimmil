@@ -1,61 +1,66 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { GearDecoration } from "@/components/animations/gear-decoration"
 import { companyInfo } from "@/lib/navigation"
 
 export const metadata: Metadata = {
   title: "Empresa",
   description:
-    "Conheça o Grupo Suprimmil — engenharia industrial, suprimentos e montagem eletromecânica desde 2010.",
+    "Conheça o Grupo Suprimmil — holding de metalmecânica e eletromecânica com unidades no Pará, Ceará e São Paulo desde 2010.",
 }
 
 const values = [
-  "Segurança — zero acidentes",
-  "Planejamento e sustentabilidade",
-  "Qualidade e compromisso",
-  "Ética e integridade",
-  "Melhoria contínua dos processos",
-  "Motivação e inovação",
-  "Liderança e evolução",
+  "Sustentabilidade e Qualidade",
+  "União",
+  "Pronta Entrega",
+  "Respeito",
+  "Integridade e Pontualidade",
+  "Melhorias Contínuas",
+  "Motivação",
+  "Inovação",
+  "Liderança",
 ]
 
 const diferenciais = [
   {
-    title: "Localização Estratégica",
-    desc: "Barcarena e Ananindeua — PA, no coração da região Norte, próximos aos principais polos industriais do estado.",
+    title: "Atuação Multi-Estado",
+    desc: "Presença no Pará, Ceará e São Paulo — capilaridade para atender sua indústria onde estiver.",
   },
   {
-    title: "Infraestrutura Moderna",
-    desc: "Parque fabril equipado com maquinário de ponta para operações de alta complexidade e precisão.",
+    title: "Parque de Máquinas",
+    desc: "Tornos CNC, furadeira radial, fresadora, plaina, corte plasma e oxicorte — capacidade de usinagem de peças até 3m de diâmetro.",
+  },
+  {
+    title: "Frota Própria",
+    desc: "Caminhão 3/4 e caminhões Munk de 10 e 12 toneladas para agilidade na entrega e montagem.",
   },
   {
     title: "Equipe Especializada",
-    desc: "Profissionais técnicos e engenheiros em constante treinamento e capacitação, garantindo excelência em cada projeto.",
+    desc: "Engenheiros e técnicos com especializações comprovadas em caldeiraria, usinagem e soldagem.",
   },
   {
-    title: "Estoque Próprio e Entrega Imediata",
-    desc: "Amplo estoque de materiais metalúrgicos para atender demandas com agilidade e sem interrupções.",
-  },
-  {
-    title: "Melhor Preço da Região",
-    desc: "Competitividade sem abrir mão da qualidade, segurança e prazos.",
+    title: "Controle de Qualidade",
+    desc: "Rigoroso controle durante todo o processo produtivo, garantindo um produto final consistente.",
   },
 ]
 
 const timeline = [
-  { year: "2010", text: "Fundação da Suprimmil em Barcarena-PA" },
-  { year: "2010", text: "Início das operações em fabricação e recuperação mecânica" },
+  { year: "2010", text: "Fundação da Suprimmil em Barcarena-PA — início das operações em fabricação e recuperação mecânica" },
   { year: "2014", text: "Expansão para montagem eletromecânica e manutenção industrial" },
   { year: "2018", text: "Abertura da filial em Ananindeua — BR 316" },
-  { year: "2020", text: "Especialização em overhaul e paradas de alta complexidade" },
-  { year: "2024", text: "Ampliação do parque fabril e capacidade de usinagem" },
+  { year: "2020", text: "Qualificação de Fornecedor Hydro — projetos de engenharia, fabricação e montagem" },
+  { year: "2022", text: "Fundação da Brazil Amortecedores em São Caetano do Sul-SP — linha pesada e vans" },
+  { year: "2024", text: "Ampliação do parque fabril e abertura da Suprimmil CE em Maracanaú-CE" },
 ]
 
 export default function EmpresaPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-dark-500 pt-24 lg:pt-32 pb-16 lg:pb-20">
+      <section className="relative bg-dark-500 pt-24 lg:pt-32 pb-16 lg:pb-20 overflow-hidden">
+        <GearDecoration size={260} speed={40} direction="ccw" opacity={0.04} className="top-0 -right-16 hidden lg:block" />
+        <GearDecoration size={140} speed={25} direction="cw" opacity={0.03} className="bottom-10 -left-8 hidden lg:block" />
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
@@ -65,7 +70,7 @@ export default function EmpresaPage() {
               Sobre o Grupo Suprimmil
             </h1>
             <p className="mt-6 text-lg text-light-300 leading-relaxed">
-              Solidez, experiência e compromisso com a indústria da região Norte desde 2010.
+              Holding de empresas de metalmecânica e eletromecânica com atuação em 3 estados — Pará, Ceará e São Paulo — desde 2010.
             </p>
           </div>
         </div>
@@ -77,19 +82,20 @@ export default function EmpresaPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-dark-500">
-                Engenharia industrial com raízes no Pará
+                Excelência em metalmecânica e eletromecânica
               </h2>
               <p className="mt-6 text-base text-dark-100 leading-relaxed">
-                A Suprimmil, situada em Barcarena-PA, atua na região Norte desde 2010
-                nas áreas de fabricação e recuperação mecânica industrial e distribuição
-                de materiais metalúrgicos, usinagem de alta complexidade, fabricação de
-                caldeiraria, tubulação/spools, equipamentos, construção e montagem
-                eletromecânica, manutenção industrial e overhaul de alta performance.
+                Com matriz em Barcarena-PA e empresas nos estados do Pará, Ceará e
+                São Paulo, o Grupo Suprimmil se destaca como referência nos setores de
+                metalmecânica e eletromecânica. São mais de <strong>5.300 m²</strong>
+                de instalações somadas entre as unidades.
               </p>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
-                Nosso objetivo principal é atender as necessidades dos clientes nas áreas
-                industrial, de mineração, cosmética e alimentícia, com base em plano
-                estratégico, missão, visão e valores sólidos.
+                Nossa atuação abrange fabricação e distribuição de materiais
+                metalmecânicos, com soluções completas em caldeiraria, usinagem,
+                tubulação (spools), equipamentos, manutenção industrial, fabricação
+                e montagem eletromecânica. Atendemos os setores de mineração,
+                cosméticos, alimentício e geração de energia.
               </p>
             </div>
             <div className="bg-dark-300 rounded-2xl aspect-[4/3] flex items-center justify-center">
@@ -114,17 +120,16 @@ export default function EmpresaPage() {
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
               <h3 className="text-xl font-bold text-dark-500">Missão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
-                Atender todas as expectativas e condicionantes dos negócios oriundos em
-                fornecimentos de bens e serviços, com responsabilidade, idoneidade e
-                ética empresarial.
+                Atender todas as expectativas em fabricação metalmecânica industrial
+                e na distribuição de materiais metalúrgicos, com responsabilidade
+                socioambiental.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
               <h3 className="text-xl font-bold text-dark-500">Visão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
-                Ser a melhor empresa em atendimento a projetos e suprimentos de
-                fornecimentos de materiais e equipamentos e serviços de montagem
-                eletromecânica e manutenção industrial da região Norte.
+                Ser referência em fabricação mecânica industrial e na distribuição de
+                produtos metalúrgicos na região Norte e Nordeste do Brasil.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
@@ -143,7 +148,8 @@ export default function EmpresaPage() {
       </section>
 
       {/* Diferenciais */}
-      <section className="bg-dark-500">
+      <section className="relative bg-dark-500 overflow-hidden">
+        <GearDecoration size={200} speed={30} direction="cw" opacity={0.04} className="-top-12 -left-12 hidden lg:block" />
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-white">
@@ -195,7 +201,8 @@ export default function EmpresaPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-dark-500">
+      <section className="relative bg-dark-500 overflow-hidden">
+        <GearDecoration size={180} speed={35} direction="ccw" opacity={0.04} className="-bottom-10 -right-10 hidden lg:block" />
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white">
             Vamos trabalhar juntos?

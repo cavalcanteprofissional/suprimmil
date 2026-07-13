@@ -3,9 +3,12 @@ import { Phone, Settings, Truck, HardHat, Wrench, Cog, Package } from "lucide-re
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/animations/fade-in"
 import { CountUp } from "@/components/animations/count-up"
+import { GearDecoration } from "@/components/animations/gear-decoration"
+import { ClientesParceiros } from "@/components/sections/clientes-parceiros"
 import { companyInfo } from "@/lib/navigation"
 
 const whatsappLink = `https://wa.me/${companyInfo.phoneRaw}`
+const whatsappLinkNE = `https://wa.me/${companyInfo.phoneNERaw}`
 
 const serviceAreas = [
   {
@@ -53,35 +56,37 @@ const serviceAreas = [
 ]
 
 const values = [
-  "Segurança — zero acidentes",
-  "Planejamento e sustentabilidade",
-  "Qualidade e compromisso",
-  "Ética e integridade",
-  "Melhoria contínua dos processos",
-  "Motivação e inovação",
-  "Liderança e evolução",
+  "Sustentabilidade e Qualidade",
+  "União",
+  "Pronta Entrega",
+  "Respeito",
+  "Integridade e Pontualidade",
+  "Melhorias Contínuas",
+  "Motivação",
+  "Inovação",
+  "Liderança",
 ]
 
 const diferenciais = [
   {
-    title: "Localização Estratégica",
-    desc: "Barcarena e Ananindeua — PA, no coração da região Norte.",
+    title: "Atuação Multi-Estado",
+    desc: "Presença no Pará, Ceará e São Paulo — capilaridade para atender sua indústria onde estiver.",
   },
   {
-    title: "Infraestrutura Moderna",
-    desc: "Parque fabril equipado para operações de alta complexidade.",
+    title: "Parque de Máquinas",
+    desc: "Tornos CNC, furadeira radial, fresadora, plaina, corte plasma e oxicorte — capacidade de usinagem de peças até 3m de diâmetro.",
+  },
+  {
+    title: "Frota Própria",
+    desc: "Caminhão 3/4 e caminhões Munk de 10 e 12 toneladas para agilidade na entrega e montagem.",
   },
   {
     title: "Equipe Especializada",
-    desc: "Profissionais em constante treinamento e capacitação.",
+    desc: "Engenheiros e técnicos com especializações comprovadas em caldeiraria, usinagem e soldagem.",
   },
   {
-    title: "Estoque Próprio",
-    desc: "Entrega imediata com estoque permanente de materiais.",
-  },
-  {
-    title: "Melhor Preço da Região",
-    desc: "Competitividade sem abrir mão da qualidade e segurança.",
+    title: "Controle de Qualidade",
+    desc: "Rigoroso controle durante todo o processo produtivo, garantindo um produto final consistente.",
   },
 ]
 
@@ -89,20 +94,22 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center bg-dark-500 pt-16 lg:pt-20">
+      <section className="relative min-h-screen flex items-center bg-dark-500 pt-16 lg:pt-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/40 via-dark-500 to-dark-500" />
+        <GearDecoration size={300} speed={45} direction="ccw" opacity={0.04} className="top-10 -right-20 hidden lg:block" />
+        <GearDecoration size={180} speed={30} direction="cw" opacity={0.03} className="bottom-20 -left-10 hidden lg:block" />
         <div className="relative mx-auto max-w-7xl px-4 lg:px-8 py-20 lg:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
-              Engenharia, Suprimentos e Serviços,
+              Metalmecânica e Eletromecânica,
               <br />
-              <span className="text-accent-500">Construção e Montagem</span>
+              <span className="text-accent-500">Seu Parceiro Estratégico</span>
               <br />
-              Eletromecânica
+              em 3 Estados
             </h1>
             <p className="mt-6 text-lg lg:text-xl text-light-300 max-w-xl leading-relaxed">
-              Soluções completas em engenharia industrial, suprimentos metalúrgicos,
-              montagem eletromecânica e manutenção industrial na região Norte desde 2010.
+              Soluções completas em engenharia, caldeiraria, usinagem, suprimentos
+              e montagem industrial. Grupo multi-empresa com atuação no Pará, Ceará e São Paulo desde 2010.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
@@ -133,25 +140,22 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-8 lg:gap-16">
             {[
               { end: 16, suffix: "+", label: "Anos de Atividade" },
-              { end: 0, label: "Funcionários", pending: true },
-              { end: 0, label: "Projetos Realizados", pending: true },
+              { end: 5300, suffix: "+", label: "m² de Instalações", format: true },
+              { end: 3, suffix: "", label: "Estados com Unidades" },
             ].map((stat) => (
               <FadeIn key={stat.label} delay={0.1}>
                 <div className="text-center">
                   <div className="text-4xl lg:text-5xl font-bold text-accent-500">
-                    {stat.end > 0 ? (
+                    {stat.format ? (
+                      <CountUp end={stat.end} suffix={stat.suffix} format />
+                    ) : stat.end > 0 ? (
                       <CountUp end={stat.end} suffix={stat.suffix} />
                     ) : (
-                      `+[X]`
+                      `[A CONFIRMAR]`
                     )}
                   </div>
                   <div className="mt-2 text-sm text-light-400">
                     {stat.label}
-                    {stat.pending && (
-                      <span className="block text-xs text-light-500 italic mt-1">
-                        {/* TODO: validar com cliente */}
-                      </span>
-                    )}
                   </div>
                 </div>
               </FadeIn>
@@ -170,19 +174,19 @@ export default function Home() {
                 O Grupo
               </span>
               <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-dark-500">
-                Solidez industrial desde 2010
+                Excelência em metalmecânica desde 2010
               </h2>
               <p className="mt-6 text-base text-dark-100 leading-relaxed">
-                A Suprimmil, situada em Barcarena-PA, atua na região Norte desde 2010
-                nas áreas de fabricação e recuperação mecânica industrial e distribuição
-                de materiais metalúrgicos, usinagem de alta complexidade, fabricação de
-                caldeiraria, tubulação/spools, equipamentos, construção e montagem
-                eletromecânica, manutenção industrial e overhaul de alta performance.
+                O Grupo Suprimmil é uma holding de empresas de metalmecânica e
+                eletromecânica, com atuação em 3 estados — Pará, Ceará e São Paulo.
+                São mais de <strong>5.300 m²</strong> de instalações somadas entre
+                as unidades, distribuídas em 4 empresas do grupo.
               </p>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
-                Nosso objetivo é atender as necessidades dos clientes nos setores
-                industrial, de mineração, cosmético e alimentício, com base em um plano
-                estratégico sólido.
+                Atendemos os setores de mineração, cosméticos, alimentício e geração
+                de energia, com soluções completas em caldeiraria, usinagem, tubulação
+                (spools), equipamentos, manutenção industrial, fabricação e montagem
+                eletromecânica.
               </p>
               <Link href="/empresa">
                 <Button className="mt-8 bg-primary-600 hover:bg-primary-700 text-white">
@@ -209,17 +213,16 @@ export default function Home() {
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
               <h3 className="text-xl font-bold text-dark-500">Missão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
-                Atender todas as expectativas e condicionantes dos negócios oriundos em
-                fornecimentos de bens e serviços, com responsabilidade, idoneidade e
-                ética empresarial.
+                Atender todas as expectativas em fabricação metalmecânica industrial
+                e na distribuição de materiais metalúrgicos, com responsabilidade
+                socioambiental.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
               <h3 className="text-xl font-bold text-dark-500">Visão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
-                Ser a melhor empresa em atendimento a projetos e suprimentos de
-                fornecimentos de materiais e equipamentos e serviços de montagem
-                eletromecânica e manutenção industrial da região Norte.
+                Ser referência em fabricação mecânica industrial e na distribuição de
+                produtos metalúrgicos na região Norte e Nordeste do Brasil.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
@@ -238,8 +241,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Certificações */}
+      <section className="relative bg-dark-400 border-y border-white/5 overflow-hidden">
+        <GearDecoration size={200} speed={35} direction="cw" opacity={0.04} className="-top-10 -right-10 hidden lg:block" />
+        <GearDecoration size={120} speed={25} direction="ccw" opacity={0.03} className="-bottom-5 -left-5 hidden lg:block" />
+        <div className="mx-auto max-w-7xl px-4 lg:px-8 py-12 lg:py-16">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+            <div className="text-center lg:text-left">
+              <span className="text-xs font-semibold text-accent-500 uppercase tracking-wider">
+                Certificações
+              </span>
+              <p className="mt-2 text-lg text-light-200 font-semibold">
+                Qualificação de Fornecedor Hydro — 2020 e 2022
+              </p>
+              <p className="text-sm text-light-400 mt-1">
+                Atuando em projetos de engenharia, fabricação, montagem e manutenção
+                para uma das maiores empresas do setor alumínio no mundo.
+              </p>
+            </div>
+            <div className="h-px w-16 lg:h-16 lg:w-px bg-white/10" />
+            <div className="text-center">
+              <span className="text-2xl font-bold text-accent-500">100%</span>
+              <p className="text-sm text-light-400">Nacional</p>
+            </div>
+            <div className="h-px w-16 lg:h-16 lg:w-px bg-white/10" />
+            <div className="text-center">
+              <span className="text-2xl font-bold text-accent-500">+5.300</span>
+              <p className="text-sm text-light-400">m² de Instalações</p>
+            </div>
+            <div className="h-px w-16 lg:h-16 lg:w-px bg-white/10" />
+            <div className="text-center">
+              <span className="text-2xl font-bold text-accent-500">3</span>
+              <p className="text-sm text-light-400">Estados</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Clientes e Parceiros */}
+      <ClientesParceiros />
+
       {/* Áreas de Atuação */}
-      <section id="servicos" className="bg-dark-500">
+      <section id="servicos" className="bg-dark-500 gear-bg-dark">
+        <GearDecoration size={180} speed={35} direction="cw" opacity={0.03} className="-top-8 -left-8 hidden lg:block" />
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <FadeIn>
           <div className="text-center max-w-2xl mx-auto">
@@ -308,31 +352,57 @@ export default function Home() {
       </section>
 
       {/* CTA Final */}
-      <section id="contato" className="bg-dark-500">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white">
-            Vamos conversar sobre seu projeto?
-          </h2>
-          <p className="mt-4 text-lg text-light-400 max-w-xl mx-auto">
-            Entre em contato com nossa equipe comercial e solicite um orçamento
-            personalizado.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-lg text-accent-500 hover:text-accent-400 transition-colors"
-            >
-              <Phone className="h-5 w-5" />
-              {companyInfo.phone}
-            </a>
-            <a
-              href={`mailto:${companyInfo.emailVendas}`}
-              className="text-lg text-light-300 hover:text-accent-500 transition-colors"
-            >
-              {companyInfo.emailVendas}
-            </a>
+      <section id="contato" className="relative bg-dark-500 overflow-hidden">
+        <GearDecoration size={250} speed={40} direction="ccw" opacity={0.04} className="-bottom-16 -right-16 hidden lg:block" />
+        <GearDecoration size={140} speed={20} direction="cw" opacity={0.03} className="top-10 left-10 hidden lg:block" />
+        <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+              Vamos conversar sobre seu projeto?
+            </h2>
+            <p className="mt-4 text-lg text-light-400 max-w-xl mx-auto">
+              Entre em contato com nossa equipe e solicite um orçamento personalizado.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="p-6 rounded-xl bg-dark-400 border border-white/5 text-center">
+              <h3 className="text-lg font-semibold text-accent-500">Região Norte</h3>
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 flex items-center justify-center gap-2 text-lg text-light-200 hover:text-accent-500 transition-colors"
+              >
+                <Phone className="h-5 w-5 text-accent-500" />
+                {companyInfo.phone}
+              </a>
+              <a
+                href={`mailto:${companyInfo.emailComercial}`}
+                className="mt-2 block text-sm text-light-400 hover:text-accent-500 transition-colors"
+              >
+                {companyInfo.emailComercial}
+              </a>
+            </div>
+            <div className="p-6 rounded-xl bg-dark-400 border border-white/5 text-center">
+              <h3 className="text-lg font-semibold text-accent-500">Região Nordeste</h3>
+              <a
+                href={whatsappLinkNE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 flex items-center justify-center gap-2 text-lg text-light-200 hover:text-accent-500 transition-colors"
+              >
+                <Phone className="h-5 w-5 text-accent-500" />
+                {companyInfo.phoneNE}
+              </a>
+              <a
+                href={`mailto:${companyInfo.emailNEGerencia}`}
+                className="mt-2 block text-sm text-light-400 hover:text-accent-500 transition-colors"
+              >
+                {companyInfo.emailNEGerencia}
+              </a>
+            </div>
+          </div>
+          <div className="mt-10 text-center">
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"

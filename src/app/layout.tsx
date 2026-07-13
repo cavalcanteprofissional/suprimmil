@@ -24,16 +24,23 @@ export const metadata: Metadata = {
     template: "%s | Grupo Suprimmil",
   },
   description:
-    "Engenharia industrial, suprimentos metalúrgicos, montagem eletromecânica e manutenção industrial na Região Norte do Brasil.",
+    "Grupo multi-empresa de metalmecânica e eletromecânica com atuação em 3 estados (PA, CE, SP). Engenharia, caldeiraria, usinagem, suprimentos e montagem industrial desde 2010.",
   keywords: [
     "engenharia industrial",
     "suprimentos metalúrgicos",
     "montagem eletromecânica",
     "manutenção industrial",
+    "caldeiraria",
+    "usinagem",
     "Barcarena",
     "Ananindeua",
     "Pará",
+    "Maracanaú",
+    "Ceará",
+    "Brazil Amortecedores",
+    "Suprimmil",
     "região Norte",
+    "região Nordeste",
   ],
   icons: {
     icon: "/icon.svg",
@@ -42,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Grupo Suprimmil",
     description:
-      "Engenharia, Suprimentos, Construção, Montagem Eletromecânica e Manutenção Industrial",
+      "Grupo multi-empresa de metalmecânica e eletromecânica com atuação em 3 estados — PA, CE e SP.",
     locale: "pt_BR",
     type: "website",
     images: ["/icon.svg"],
@@ -56,15 +63,14 @@ const jsonLd = {
   url: "https://suprimmil.com.br",
   logo: "https://suprimmil.com.br/logo.svg",
   description:
-    "Engenharia industrial, suprimentos metalúrgicos, montagem eletromecânica e manutenção industrial.",
+    "Holding de empresas de metalmecânica e eletromecânica com atuação em 3 estados — Pará, Ceará e São Paulo.",
   foundingDate: "2010",
   address: [
     {
       "@type": "PostalAddress",
-      streetAddress: "Rodovia PA-481, S/N — Águas Verdes",
+      streetAddress: "Rod. PA 481, Km 16",
       addressLocality: "Barcarena",
       addressRegion: "PA",
-      postalCode: "68445-000",
       addressCountry: "BR",
     },
     {
@@ -74,17 +80,27 @@ const jsonLd = {
       addressRegion: "PA",
       addressCountry: "BR",
     },
+    {
+      "@type": "PostalAddress",
+      streetAddress: "Rod. Dr. Mendel Steinbruch, 10293, Sala 14, Pajuçara",
+      addressLocality: "Maracanaú",
+      addressRegion: "CE",
+      postalCode: "61932-005",
+      addressCountry: "BR",
+    },
   ],
   contactPoint: [
     {
       "@type": "ContactPoint",
       telephone: "+55-91-99393-4925",
       contactType: "sales",
+      areaServed: "Norte",
     },
     {
       "@type": "ContactPoint",
-      telephone: "+55-91-3013-7730",
-      contactType: "customer service",
+      telephone: "+55-85-98170-7479",
+      contactType: "sales",
+      areaServed: "Nordeste",
     },
   ],
 }
@@ -98,6 +114,7 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       className={`${spaceGrotesk.variable} ${ibmPlexSans.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script
