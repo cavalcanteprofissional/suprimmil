@@ -1,3 +1,5 @@
+![Grupo Suprimmil](public/og-image.png)
+
 # Grupo Suprimmil — Site Institucional
 
 Site institucional do Grupo Suprimmil, holding de metalmecânica e eletromecânica com atuação no Pará, Ceará e São Paulo.
