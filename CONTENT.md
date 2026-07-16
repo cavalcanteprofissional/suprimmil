@@ -207,7 +207,10 @@ Estrutura atual implementada (v0.1.0):
 ## 12. Lacunas de conteúdo a validar com o cliente antes de publicar
 
 - [ ] Números reais de funcionários e projetos concluídos (seções de contadores)
-- [ ] Handles atuais das redes sociais (Instagram, Facebook, LinkedIn)
+- [x] Handles atuais das redes sociais:
+  - Instagram: https://www.instagram.com/grupo_suprimmil/
+  - Facebook: https://www.facebook.com/100076823992656/photos/
+  - LinkedIn: https://www.linkedin.com/in/suprimmil-metal-mec%C3%A2nica-ltda-1b47a6322/
 - [ ] Fotos reais de obras, equipe e instalações (8 placeholders no site)
 - [ ] Nomes exatos dos logos de "Principais Parceiros" não identificados
 - [ ] Autorização de uso de marca/logo de cada cliente e parceiro listado

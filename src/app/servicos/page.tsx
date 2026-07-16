@@ -8,7 +8,7 @@ import { companyInfo } from "@/lib/navigation"
 export const metadata: Metadata = {
   title: "Serviços",
   description:
-    "Conheça as áreas de atuação do Grupo Suprimmil: engenharia, suprimentos, construção, fabricação mecânica, usinagem e fornecimento de materiais. Capacidade técnica em caldeiraria, usinagem CNC e corte.",
+    "Soluções completas em engenharia industrial, suprimentos, caldeiraria, usinagem CNC, fabricação mecânica, montagem eletromecânica e fornecimento de materiais metálicos. Capacidade técnica com corte plasma, torno CNC e frota própria.",
 }
 
 const services = [
@@ -109,7 +109,7 @@ export default function ServicosPage() {
             <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
               Serviços
             </span>
-            <h1 className="mt-3 text-4xl lg:text-5xl font-bold text-white">
+            <h1 className="mt-3 text-4xl lg:text-5xl font-bold text-white font-heading">
               Áreas de Atuação
             </h1>
             <p className="mt-6 text-lg text-light-300 leading-relaxed">
@@ -134,7 +134,7 @@ export default function ServicosPage() {
                         <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-600/10 text-primary-600">
                           <Icon className="h-6 w-6" />
                         </div>
-                        <h2 className="text-2xl lg:text-3xl font-bold text-dark-500">
+                        <h2 className="text-2xl lg:text-3xl font-bold text-dark-500 font-heading">
                           {service.title}
                         </h2>
                       </div>
@@ -168,10 +168,10 @@ export default function ServicosPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-sm font-semibold text-primary-600 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
               Capacidade Técnica
             </span>
-            <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-dark-500">
+            <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-dark-500 font-heading">
               Estrutura e Parque de Máquinas
             </h2>
             <p className="mt-4 text-base text-dark-100">
@@ -181,7 +181,7 @@ export default function ServicosPage() {
           </div>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500">Corte CNC</h3>
+              <h3 className="text-lg font-semibold text-dark-500 font-heading">Corte CNC</h3>
               <ul className="mt-4 space-y-2">
                 {["Corte Oxicorte", "Corte Plasma", "Mesa de Corte Plasma CNC"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">
@@ -192,7 +192,7 @@ export default function ServicosPage() {
               </ul>
             </div>
             <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500">Caldeiraria</h3>
+              <h3 className="text-lg font-semibold text-dark-500 font-heading">Caldeiraria</h3>
               <ul className="mt-4 space-y-2">
                 {["Calandragem de chapas e perfis", "Fabricação de estruturas metálicas", "Tanques e dutos industriais"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">
@@ -203,7 +203,7 @@ export default function ServicosPage() {
               </ul>
             </div>
             <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500">Usinagem</h3>
+              <h3 className="text-lg font-semibold text-dark-500 font-heading">Usinagem</h3>
               <p className="mt-2 text-xs text-dark-100">Peças de até 3 m de diâmetro</p>
               <ul className="mt-4 space-y-2">
                 {["Torno CNC", "Torno Ø1000 x 4000 mm", "Torno Ø3000 x 4000 mm", "Furadeira Radial", "Fresadora", "Plaina"].map((item) => (
@@ -215,7 +215,7 @@ export default function ServicosPage() {
               </ul>
             </div>
             <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500">Frota Própria</h3>
+              <h3 className="text-lg font-semibold text-dark-500 font-heading">Frota Própria</h3>
               <ul className="mt-4 space-y-2">
                 {["Caminhão 3/4", "Munk 12 toneladas", "Munk 10 toneladas"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">
@@ -226,7 +226,7 @@ export default function ServicosPage() {
               </ul>
             </div>
             <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500">Controle de Qualidade</h3>
+              <h3 className="text-lg font-semibold text-dark-500 font-heading">Controle de Qualidade</h3>
               <ul className="mt-4 space-y-2">
                 {["Inspeção durante processo produtivo", "Garantia de produto final consistente", "Rastreabilidade de materiais"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">
@@ -237,7 +237,7 @@ export default function ServicosPage() {
               </ul>
             </div>
             <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500">Pintura e Acabamento</h3>
+              <h3 className="text-lg font-semibold text-dark-500 font-heading">Pintura e Acabamento</h3>
               <ul className="mt-4 space-y-2">
                 {["Jateamento e pintura homologados", "Pintura industrial", "Tratamento anticorrosivo"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">
@@ -255,7 +255,7 @@ export default function ServicosPage() {
       <section className="relative bg-dark-500 overflow-hidden">
         <GearDecoration size={180} speed={30} direction="cw" opacity={0.04} className="-bottom-8 -right-8 hidden lg:block" />
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white font-heading">
             Precisa de um orçamento?
           </h2>
           <p className="mt-4 text-lg text-light-400 max-w-xl mx-auto">

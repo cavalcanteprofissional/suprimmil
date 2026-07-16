@@ -4,9 +4,9 @@ import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react"
 import { navItems, companyInfo } from "@/lib/navigation"
 
 const socialLinks = [
-  { label: "Facebook", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "LinkedIn", href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/grupo_suprimmil/", ariaLabel: "Instagram Grupo Suprimmil" },
+  { label: "Facebook", href: "https://www.facebook.com/100076823992656/photos/", ariaLabel: "Facebook Grupo Suprimmil" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/suprimmil-metal-mec%C3%A2nica-ltda-1b47a6322/", ariaLabel: "LinkedIn Grupo Suprimmil" },
 ]
 
 export function Footer() {
@@ -18,13 +18,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8 py-12 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="block mb-4">
               <Image
                 src="/logo.svg"
                 alt="Grupo Suprimmil"
                 width={360}
                 height={90}
-                className="h-16 w-auto"
+                className="w-full max-w-xs h-auto"
               />
             </Link>
             <p className="text-sm text-light-400 leading-relaxed max-w-xs">
@@ -34,7 +34,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4 font-heading">
               Navegação
             </h3>
             <ul className="space-y-3">
@@ -52,7 +52,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4 font-heading">
               Contato
             </h3>
             <p className="text-xs text-light-500 uppercase tracking-wider mb-2">Norte</p>
@@ -104,7 +104,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4 font-heading">
               Endereços
             </h3>
             <ul className="space-y-3">
@@ -122,7 +122,7 @@ export function Footer() {
               </li>
             </ul>
 
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mt-6 mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mt-6 mb-4 font-heading">
               Redes Sociais
             </h3>
             <div className="flex gap-4">
@@ -132,10 +132,11 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm text-light-400 hover:text-accent-500 transition-colors"
+                  aria-label={social.ariaLabel}
+                  className="flex items-center gap-1 py-2 px-3 -mx-3 text-sm text-light-400 hover:text-accent-500 transition-colors focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2 rounded"
                 >
                   {social.label}
-                  <ArrowUpRight className="h-3 w-3" />
+                  <ArrowUpRight className="h-3 w-3" aria-hidden />
                 </a>
               ))}
             </div>

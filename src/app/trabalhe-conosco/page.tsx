@@ -1,18 +1,11 @@
 import type { Metadata } from "next"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 import { GearDecoration } from "@/components/animations/gear-decoration"
-import { companyInfo } from "@/lib/navigation"
-
+import { JobForm } from "@/components/sections/job-form"
 export const metadata: Metadata = {
   title: "Trabalhe Conosco",
   description:
-    "Envie seu currículo e candidate-se a oportunidades no Grupo Suprimmil. Áreas: engenharia, montagem, usinagem, caldeiraria e mais.",
+    "Envie seu currículo para o Grupo Suprimmil. Estamos sempre em busca de talentos para nossas unidades em Barcarena-PA, Ananindeua-PA e Maracanaú-CE nas áreas de caldeiraria, usinagem, soldagem e engenharia.",
 }
-
-const whatsappLink = `https://wa.me/${companyInfo.phoneRaw}`
 
 const areas = [
   "Engenharia",
@@ -39,7 +32,7 @@ export default function TrabalheConoscoPage() {
             <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
               Trabalhe Conosco
             </span>
-            <h1 className="mt-3 text-4xl lg:text-5xl font-bold text-white">
+            <h1 className="mt-3 text-4xl lg:text-5xl font-bold text-white font-heading">
               Faça parte da nossa equipe
             </h1>
             <p className="mt-6 text-lg text-light-300 leading-relaxed">
@@ -54,7 +47,7 @@ export default function TrabalheConoscoPage() {
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Texto institucional */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold text-dark-500">
+              <h2 className="text-2xl font-bold text-dark-500 font-heading">
                 Junte-se a nós
               </h2>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
@@ -63,7 +56,7 @@ export default function TrabalheConoscoPage() {
                 fazer parte de uma equipe em crescimento, envie sua candidatura.
               </p>
               <div className="mt-8 p-6 rounded-xl bg-white border border-light-300">
-                <h3 className="text-sm font-semibold text-dark-500 uppercase tracking-wider">
+                <h3 className="text-sm font-semibold text-dark-500 uppercase tracking-wider font-heading">
                   Áreas de Interesse
                 </h3>
                 <ul className="mt-4 space-y-2">
@@ -80,88 +73,14 @@ export default function TrabalheConoscoPage() {
             {/* Formulário */}
             <div className="lg:col-span-3">
               <div className="p-8 rounded-2xl bg-white border border-light-300">
-                <h2 className="text-2xl font-bold text-dark-500">
+                <h2 className="text-2xl font-bold text-dark-500 font-heading">
                   Formulário de Candidatura
                 </h2>
                 <p className="mt-2 text-sm text-dark-100">
                   Preencha seus dados e envie seu currículo pelo WhatsApp.
                 </p>
 
-                <form
-                  action={whatsappLink}
-                  method="GET"
-                  target="_blank"
-                  className="mt-8 space-y-6"
-                >
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="nome">Nome completo</Label>
-                      <Input
-                        id="nome"
-                        name="nome"
-                        placeholder="Seu nome completo"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">E-mail</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="seu@email.com"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="telefone">Telefone / WhatsApp</Label>
-                      <Input
-                        id="telefone"
-                        name="telefone"
-                        placeholder="(91) 99999-9999"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="area">Área de interesse</Label>
-                      <select
-                        id="area"
-                        name="area"
-                        className="h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-                        required
-                      >
-                        <option value="">Selecione uma área</option>
-                        {areas.map((area) => (
-                          <option key={area} value={area}>
-                            {area}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="mensagem">Mensagem / Observações</Label>
-                    <Textarea
-                      id="mensagem"
-                      name="mensagem"
-                      placeholder="Conte um pouco sobre sua experiência e por que deseja trabalhar na Suprimmil..."
-                      rows={4}
-                    />
-                  </div>
-                  <p className="text-xs text-light-500">
-                    Ao enviar, você será redirecionado ao WhatsApp para anexar seu
-                    currículo e concluir a candidatura.
-                  </p>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="bg-accent-500 hover:bg-accent-600 text-white w-full sm:w-auto"
-                  >
-                    Enviar Candidatura
-                  </Button>
-                </form>
+                <JobForm />
               </div>
             </div>
           </div>

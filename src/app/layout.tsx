@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { Space_Grotesk, IBM_Plex_Sans } from "next/font/google"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { WhatsAppFloat } from "@/components/layout/whatsapp-float"
+import { BackToTop } from "@/components/layout/back-to-top"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
@@ -122,10 +124,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased overflow-x-hidden">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium"
+        >
+          Pular para o conteúdo principal
+        </a>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main id="main-content" className="min-h-screen">{children}</main>
         <Footer />
+        <WhatsAppFloat />
+        <BackToTop />
       </body>
     </html>
   )

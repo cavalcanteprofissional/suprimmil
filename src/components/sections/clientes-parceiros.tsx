@@ -15,6 +15,7 @@ const clientes = [
   { src: "/logos/cliente-08.svg", alt: "Cliente 8" },
   { src: "/logos/cliente-09-natura.svg", alt: "Natura" },
   { src: "/logos/cliente-10.svg", alt: "Cliente 10" },
+  { src: "/logos/cliente-11.svg", alt: "Cliente 11" },
 ]
 
 const parceiros = [
@@ -32,9 +33,9 @@ function LogoGear({ logo, index }: { logo: { src: string; alt: string }; index: 
   const gearSrc = gears[index % 2]
 
   return (
-    <div className="relative w-28 h-28 lg:w-32 lg:h-32 flex items-center justify-center">
+    <div className="relative w-28 h-28 lg:w-32 lg:h-32 flex items-center justify-center group">
       <motion.div
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 flex items-center justify-center group-hover:[animation-play-state:paused]"
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: index % 2 === 0 ? 25 : 18, ease: "linear" }}
       >
@@ -47,7 +48,7 @@ function LogoGear({ logo, index }: { logo: { src: string; alt: string }; index: 
           aria-hidden
         />
       </motion.div>
-      <div className="relative z-10 w-20 h-20 lg:w-24 lg:h-24 flex items-center justify-center">
+      <div className="relative z-10 w-20 h-20 lg:w-24 lg:h-24 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
         <Image
           src={logo.src}
           alt={logo.alt}
@@ -69,7 +70,7 @@ export function ClientesParceiros() {
             <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
               Clientes e Parceiros
             </span>
-            <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-white font-heading">
               Quem confia no nosso trabalho
             </h2>
             <p className="mt-4 text-base text-light-400">
@@ -80,10 +81,10 @@ export function ClientesParceiros() {
 
         <FadeIn delay={0.1}>
           <div className="mb-8">
-            <h3 className="text-sm font-semibold text-light-400 uppercase tracking-wider text-center mb-8">
+            <h3 className="text-sm font-semibold text-light-400 uppercase tracking-wider text-center mb-8 font-heading">
               Clientes
             </h3>
-            <div className="flex flex-wrap justify-center gap-6 lg:gap-10">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-10">
               {clientes.map((cliente, i) => (
                 <LogoGear key={cliente.src} logo={cliente} index={i} />
               ))}
@@ -95,10 +96,10 @@ export function ClientesParceiros() {
 
         <FadeIn delay={0.2}>
           <div>
-            <h3 className="text-sm font-semibold text-light-400 uppercase tracking-wider text-center mb-8">
+            <h3 className="text-sm font-semibold text-light-400 uppercase tracking-wider text-center mb-8 font-heading">
               Parceiros
             </h3>
-            <div className="flex flex-wrap justify-center gap-6 lg:gap-10">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-10">
               {parceiros.map((parceiro, i) => (
                 <LogoGear key={parceiro.src} logo={parceiro} index={i + clientes.length} />
               ))}

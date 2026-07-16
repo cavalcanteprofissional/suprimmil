@@ -1,16 +1,13 @@
 import type { Metadata } from "next"
 import { Phone, Mail, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 import { GearDecoration } from "@/components/animations/gear-decoration"
+import { ContactForm } from "@/components/sections/contact-form"
 import { companyInfo } from "@/lib/navigation"
 
 export const metadata: Metadata = {
   title: "Contato",
   description:
-    "Entre em contato com o Grupo Suprimmil. Solicite um orçamento ou tire suas dúvidas com nossa equipe nos núcleos Norte e Nordeste.",
+    "Fale com o Grupo Suprimmil. Matriz em Barcarena-PA, filiais em Ananindeua-PA e Maracanaú-CE. Solicite orçamento para projetos de engenharia, fabricação mecânica, caldeiraria, usinagem e montagem industrial.",
 }
 
 const whatsappLink = `https://wa.me/${companyInfo.phoneRaw}`
@@ -72,7 +69,7 @@ export default function ContatoPage() {
             <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
               Contato
             </span>
-            <h1 className="mt-3 text-4xl lg:text-5xl font-bold text-white">
+            <h1 className="mt-3 text-4xl lg:text-5xl font-bold text-white font-heading">
               Entre em Contato
             </h1>
             <p className="mt-6 text-lg text-light-300 leading-relaxed">
@@ -89,7 +86,7 @@ export default function ContatoPage() {
             <div className="lg:col-span-1 space-y-8">
               {/* Região Norte */}
               <div>
-                <h3 className="text-sm font-semibold text-accent-500 uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-semibold text-accent-500 uppercase tracking-wider mb-4 font-heading">
                   Região Norte
                 </h3>
                 <div className="space-y-3">
@@ -103,8 +100,8 @@ export default function ContatoPage() {
                         rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
                         className="flex items-start gap-3 p-4 rounded-xl bg-white border border-light-300 hover:border-accent-500/30 transition-colors group"
                       >
-                        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent-500/10 text-accent-500 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-                          <Icon className="h-5 w-5" />
+                        <div className="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-lg bg-accent-500/10 text-accent-500 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
+                          <Icon className="h-6 w-6 md:h-5 md:w-5" />
                         </div>
                         <div>
                           <span className="text-xs text-light-500 uppercase tracking-wider">
@@ -121,7 +118,7 @@ export default function ContatoPage() {
               </div>
               {/* Região Nordeste */}
               <div>
-                <h3 className="text-sm font-semibold text-accent-500 uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-semibold text-accent-500 uppercase tracking-wider mb-4 font-heading">
                   Região Nordeste
                 </h3>
                 <div className="space-y-3">
@@ -135,8 +132,8 @@ export default function ContatoPage() {
                         rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
                         className="flex items-start gap-3 p-4 rounded-xl bg-white border border-light-300 hover:border-accent-500/30 transition-colors group"
                       >
-                        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent-500/10 text-accent-500 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-                          <Icon className="h-5 w-5" />
+                        <div className="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-lg bg-accent-500/10 text-accent-500 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
+                          <Icon className="h-6 w-6 md:h-5 md:w-5" />
                         </div>
                         <div>
                           <span className="text-xs text-light-500 uppercase tracking-wider">
@@ -156,91 +153,14 @@ export default function ContatoPage() {
             {/* Formulário */}
             <div className="lg:col-span-2">
               <div className="p-8 rounded-2xl bg-white border border-light-300">
-                <h2 className="text-2xl font-bold text-dark-500">
+                <h2 className="text-2xl font-bold text-dark-500 font-heading">
                   Envie sua mensagem
                 </h2>
                 <p className="mt-2 text-sm text-dark-100">
                   Preencha o formulário abaixo e nossa equipe retornará em breve.
                 </p>
 
-                <form
-                  action={whatsappLink}
-                  method="GET"
-                  target="_blank"
-                  className="mt-8 space-y-6"
-                >
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="nome">Nome</Label>
-                      <Input
-                        id="nome"
-                        name="nome"
-                        placeholder="Seu nome completo"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">E-mail</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="seu@email.com"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="telefone">Telefone</Label>
-                      <Input
-                        id="telefone"
-                        name="telefone"
-                        placeholder="(91) 99999-9999"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="regiao">Região</Label>
-                      <select
-                        id="regiao"
-                        name="regiao"
-                        className="flex h-10 w-full rounded-lg border border-light-300 bg-white px-3 py-2 text-sm text-dark-500 placeholder:text-dark-100 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
-                        required
-                      >
-                        <option value="">Selecione...</option>
-                        <option value="norte">Norte</option>
-                        <option value="nordeste">Nordeste</option>
-                        <option value="outro">Outro</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="assunto">Assunto</Label>
-                    <Input
-                      id="assunto"
-                      name="assunto"
-                      placeholder="Ex: Orçamento, dúvida..."
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="mensagem">Mensagem</Label>
-                    <Textarea
-                      id="mensagem"
-                      name="mensagem"
-                      placeholder="Descreva sua necessidade..."
-                      rows={5}
-                      required
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="bg-accent-500 hover:bg-accent-600 text-white w-full sm:w-auto"
-                  >
-                    Enviar via WhatsApp
-                  </Button>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>
@@ -251,7 +171,7 @@ export default function ContatoPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark-500">
+            <h2 className="text-3xl lg:text-4xl font-bold text-dark-500 font-heading">
               Nossas Unidades
             </h2>
             <p className="mt-4 text-base text-dark-100">
@@ -259,16 +179,16 @@ export default function ContatoPage() {
             </p>
           </div>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="rounded-2xl overflow-hidden border border-light-300">
+            <div className="rounded-2xl overflow-hidden border border-light-300 hover:border-accent-500/30 hover:shadow-md transition-all">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39889.123!2d-48.750!3d-1.500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMzAnMDAuMCJTIDQ4wrA0NScwMC4wIlc!5e0!3m2!1spt-BR!2sbr!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39894.567!2d-48.7214!3d-1.5345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a46c8a0b8f9b0b%3A0x0!2sBarcarena%2C%20PA!5e0!3m2!1spt-BR!2sbr!4v1"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa - Barcarena"
+                title="Mapa - Matriz Barcarena-PA"
               />
               <div className="p-4">
                 <div className="flex items-center gap-2 text-sm font-semibold text-dark-500">
@@ -278,16 +198,16 @@ export default function ContatoPage() {
                 <p className="mt-1 text-sm text-dark-100">{companyInfo.addressBarcarena}</p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-light-300">
+            <div className="rounded-2xl overflow-hidden border border-light-300 hover:border-accent-500/30 hover:shadow-md transition-all">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39889.123!2d-48.380!3d-1.365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMjEnNTQuMCJTIDQ4wrAyMic0OC4wIlc!5e0!3m2!1spt-BR!2sbr!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39891.234!2d-48.3744!3d-1.3657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a4627a8b1f4321%3A0x0!2sAnanindeua%2C%20PA!5e0!3m2!1spt-BR!2sbr!4v1"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa - Ananindeua"
+                title="Mapa - Filial Ananindeua-PA"
               />
               <div className="p-4">
                 <div className="flex items-center gap-2 text-sm font-semibold text-dark-500">
@@ -297,16 +217,16 @@ export default function ContatoPage() {
                 <p className="mt-1 text-sm text-dark-100">{companyInfo.addressAnanindeua}</p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-light-300">
+            <div className="rounded-2xl overflow-hidden border border-light-300 hover:border-accent-500/30 hover:shadow-md transition-all">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39889.123!2d-38.620!3d-3.870!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNTInMTIuMCJTIDM4wrAzNzEyLjAiVw!5e0!3m2!1spt-BR!2sbr!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39885.456!2d-38.6247!3d-3.8771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c75a3b0b5b12345%3A0x0!2sMaracana%C3%BA%2C%20CE!5e0!3m2!1spt-BR!2sbr!4v1"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa - Maracanaú"
+                title="Mapa - Suprimmil CE Maracanaú-CE"
               />
               <div className="p-4">
                 <div className="flex items-center gap-2 text-sm font-semibold text-dark-500">

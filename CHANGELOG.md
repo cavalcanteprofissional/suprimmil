@@ -6,6 +6,70 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/), e o projeto 
 
 ---
 
+## [0.4.0] — 2026-07-15
+
+### Adicionado
+
+- **WhatsApp Float**: botão fixo inferior direito laranja com link wa.me em todas as páginas
+- **Back to Top**: botão fixo acima do WhatsApp que aparece após 300px de scroll
+- **Active Nav State**: destaque no link da página atual via `usePathname()` + `aria-current="page"`
+- **Formulários via client handler**: ContactForm e JobForm montam `?text=` com dados do formulário para wa.me
+- **Consistência Visual**: `accent-500` padrão (#f26522) em todos os section labels, `font-heading` em 48 headings
+- **Micro-interações**: hover com borda/sombra nos mapas, hover scale+pause nos logos clientes, rotação no hamburger, opacidade 60% na linha da timeline
+- **Metadata mais descritivas**: home, contato, empresa, servicos, trabalhe-conosco com descrições ricas em SEO
+
+### Modificado
+
+- **Section padding unificado**: contadores e certificações migrados para `py-16 lg:py-24`
+- **Serviços**: label "Capacidade Técnica" corrigido para `text-accent-500`
+- **Home**: section label "Diferenciais" corrigido para `text-accent-500`
+- **Hamburger icon**: `transition-transform duration-300 rotate-90` ao alternar
+- **Linha da timeline**: opacidade aumentada de 30% para 60%
+- **Mapas**: adicionados `hover:border-accent-500/30 hover:shadow-md transition-all`
+
+### Corrigido
+
+- Contraste dos labels de seção: alguns usavam `text-primary-600` em vez de `text-accent-500`
+- Padding inconsistente entre seções (contadores/certificações com `py-12` enquanto as demais usavam `py-16`)
+
+---
+
+## [0.3.0] — 2026-07-15
+
+### Adicionado
+
+- **Componente Select (`@base-ui/react/select`)**: substitui selects nativos no formulário de Contato e Trabalhe Conosco — acessível, estilizado com padrão shadcn, com indicador de check e animação de popup
+- **Componente Timeline com GSAP + ScrollTrigger**: revelação animada com fade/slide dos itens da linha do tempo + animação de crescimento da linha vertical — dependência `gsap` v3.15 finalmente implementada
+- **Skip-to-content link**: atalho de teclado "Pular para o conteúdo principal" no `layout.tsx`
+- **Focus-visible styles**: `focus-visible:outline-2` nos links de navegação (Header, Footer, mobile menu)
+
+### Modificado
+
+- **Página Empresa**: todas as seções agora usam `<FadeIn>` para animação de entrada (antes 0 animações)
+- **Página Empresa**: timeline substituída por `<Timeline>` com GSAP ScrollTrigger
+- **Selects substituídos**: `/contato` e `/trabalhe-conosco` — de `<select>` nativo para `@base-ui/react/select` com estilo shadcn
+- **Coordenadas do Google Maps**: atualizadas de placeholders para coordenadas reais aproximadas de Barcarena, Ananindeua e Maracanaú
+- **Redes Sociais (Footer)**: links alterados de `href="#"` para URLs placeholder (facebook.com/suprimmil, instagram.com/suprimmil, linkedin.com/company/suprimmil) com `aria-label` descritivo
+- **Ícones decorativos**: `aria-hidden` em ícones de telefone (Header), seta externa (Footer) e engrenagens (GearDecoration)
+- **Header links**: `focus-visible:outline-2` adicionado para navegação por teclado
+
+### Corrigido
+
+- Select nativo no `/trabalhe-conosco` usava estilo diferente do resto do formulário — padronizado com `@base-ui/react/select`
+- Falta de animações na página Empresa — inconsistência com o padrão das demais páginas
+- Redes sociais: migrado de `href="#"` placeholder para URLs reais (Instagram, Facebook, LinkedIn)
+
+### Modificado
+
+- **Responsividade mobile**: correções em 10+ pontos para adequação a viewport 320px e touch targets WCAG
+
+### Pendente
+
+- [ ] Performance Lighthouse 90+
+- [ ] Conteúdo real a validar com cliente (fotos, CNPJ, autorizações)
+
+---
+
 ## [0.2.0] — 2026-07-13
 
 ### Adicionado
@@ -45,12 +109,6 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/), e o projeto 
 - Conflito `public/file and page file` para `/icon.svg` — removido `public/icon.svg`
 - Erro de hidratação causado por extensões de navegador — adicionado `suppressHydrationWarning` no `<html>`
 
-### Pendente
-
-- [ ] GSAP + ScrollTrigger na timeline da empresa
-- [ ] Atualizar coordenadas reais do Google Maps
-- [ ] Autorização de uso de marca dos logos de clientes/parceiros
-
 ---
 
 ## [0.1.0] — 2026-07-04
@@ -88,14 +146,3 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/), e o projeto 
 
 - Logo (SVG) e ícone (SVG) organizados em `public/`
 - Favicon configurado via metadata
-
-### Pendente (gap list)
-
-- [ ] Números reais de anos/funcionários/projetos
-- [ ] Handles de redes sociais
-- [ ] Fotos reais de obras e instalações
-- [ ] Certificações (ISO, NR, etc.)
-- [ ] Portfólio de clientes
-- [ ] CNPJ e razão social para rodapé
-- [ ] Animações GSAP + ScrollTrigger na timeline da empresa
-- [ ] Imagens reais nos placeholders das seções

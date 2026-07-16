@@ -1,4 +1,5 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import { Phone, Settings, Truck, HardHat, Wrench, Cog, Package } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/animations/fade-in"
@@ -6,6 +7,11 @@ import { CountUp } from "@/components/animations/count-up"
 import { GearDecoration } from "@/components/animations/gear-decoration"
 import { ClientesParceiros } from "@/components/sections/clientes-parceiros"
 import { companyInfo } from "@/lib/navigation"
+
+export const metadata: Metadata = {
+  description:
+    "O Grupo Suprimmil é especializado em engenharia industrial, fabricação mecânica, caldeiraria, usinagem CNC, montagem eletromecânica e fornecimento de materiais metalúrgicos. Matriz em Barcarena-PA com filiais no Ceará e São Paulo.",
+}
 
 const whatsappLink = `https://wa.me/${companyInfo.phoneRaw}`
 const whatsappLinkNE = `https://wa.me/${companyInfo.phoneNERaw}`
@@ -100,7 +106,7 @@ export default function Home() {
         <GearDecoration size={180} speed={30} direction="cw" opacity={0.03} className="bottom-20 -left-10 hidden lg:block" />
         <div className="relative mx-auto max-w-7xl px-4 lg:px-8 py-20 lg:py-32">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight font-heading">
               Metalmecânica e Eletromecânica,
               <br />
               <span className="text-accent-500">Seu Parceiro Estratégico</span>
@@ -135,9 +141,9 @@ export default function Home() {
       </section>
 
       {/* Contadores */}
-      <section className="bg-dark-400 border-y border-white/5">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8 py-12 lg:py-16">
-          <div className="grid grid-cols-3 gap-8 lg:gap-16">
+      <section className="bg-dark-400 border-y border-white/5 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-16">
             {[
               { end: 16, suffix: "+", label: "Anos de Atividade" },
               { end: 5300, suffix: "+", label: "m² de Instalações", format: true },
@@ -165,15 +171,15 @@ export default function Home() {
       </section>
 
       {/* O Grupo */}
-      <section id="empresa" className="bg-light-100">
+      <section id="empresa" className="bg-light-100 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <FadeIn>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <span className="text-sm font-semibold text-primary-600 uppercase tracking-wider">
+              <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
                 O Grupo
               </span>
-              <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-dark-500">
+              <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-dark-500 font-heading">
                 Excelência em metalmecânica desde 2010
               </h2>
               <p className="mt-6 text-base text-dark-100 leading-relaxed">
@@ -211,7 +217,7 @@ export default function Home() {
           <FadeIn>
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500">Missão</h3>
+              <h3 className="text-xl font-bold text-dark-500 font-heading">Missão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
                 Atender todas as expectativas em fabricação metalmecânica industrial
                 e na distribuição de materiais metalúrgicos, com responsabilidade
@@ -219,14 +225,14 @@ export default function Home() {
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500">Visão</h3>
+              <h3 className="text-xl font-bold text-dark-500 font-heading">Visão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
                 Ser referência em fabricação mecânica industrial e na distribuição de
                 produtos metalúrgicos na região Norte e Nordeste do Brasil.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500">Valores</h3>
+              <h3 className="text-xl font-bold text-dark-500 font-heading">Valores</h3>
               <ul className="mt-4 space-y-2">
                 {values.map((v) => (
                   <li key={v} className="flex items-start gap-2 text-base text-dark-100">
@@ -245,7 +251,7 @@ export default function Home() {
       <section className="relative bg-dark-400 border-y border-white/5 overflow-hidden">
         <GearDecoration size={200} speed={35} direction="cw" opacity={0.04} className="-top-10 -right-10 hidden lg:block" />
         <GearDecoration size={120} speed={25} direction="ccw" opacity={0.03} className="-bottom-5 -left-5 hidden lg:block" />
-        <div className="mx-auto max-w-7xl px-4 lg:px-8 py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
             <div className="text-center lg:text-left">
               <span className="text-xs font-semibold text-accent-500 uppercase tracking-wider">
@@ -290,7 +296,7 @@ export default function Home() {
             <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
               Áreas de Atuação
             </span>
-            <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-white font-heading">
               Soluções completas para sua indústria
             </h2>
             <p className="mt-4 text-base text-light-400">
@@ -310,7 +316,7 @@ export default function Home() {
                   <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 group-hover:bg-accent-500 group-hover:text-white transition-colors">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-accent-500 transition-colors">
+                  <h3 className="mt-4 text-lg font-semibold text-white group-hover:text-accent-500 transition-colors font-heading">
                     {area.title}
                   </h3>
                   <p className="mt-2 text-sm text-light-400 leading-relaxed">
@@ -329,10 +335,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <FadeIn>
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-sm font-semibold text-primary-600 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
               Diferenciais
             </span>
-            <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-dark-500">
+            <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-dark-500 font-heading">
               Por que escolher a Suprimmil?
             </h2>
           </div>
@@ -342,7 +348,7 @@ export default function Home() {
                 key={item.title}
                 className="p-6 rounded-xl bg-white border border-light-300"
               >
-                <h3 className="text-lg font-semibold text-dark-500">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-dark-500 font-heading">{item.title}</h3>
                 <p className="mt-2 text-sm text-dark-100">{item.desc}</p>
               </div>
             ))}
@@ -357,7 +363,7 @@ export default function Home() {
         <GearDecoration size={140} speed={20} direction="cw" opacity={0.03} className="top-10 left-10 hidden lg:block" />
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white font-heading">
               Vamos conversar sobre seu projeto?
             </h2>
             <p className="mt-4 text-lg text-light-400 max-w-xl mx-auto">
@@ -366,7 +372,7 @@ export default function Home() {
           </div>
           <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="p-6 rounded-xl bg-dark-400 border border-white/5 text-center">
-              <h3 className="text-lg font-semibold text-accent-500">Região Norte</h3>
+              <h3 className="text-lg font-semibold text-accent-500 font-heading">Região Norte</h3>
               <a
                 href={whatsappLink}
                 target="_blank"
@@ -384,7 +390,7 @@ export default function Home() {
               </a>
             </div>
             <div className="p-6 rounded-xl bg-dark-400 border border-white/5 text-center">
-              <h3 className="text-lg font-semibold text-accent-500">Região Nordeste</h3>
+              <h3 className="text-lg font-semibold text-accent-500 font-heading">Região Nordeste</h3>
               <a
                 href={whatsappLinkNE}
                 target="_blank"

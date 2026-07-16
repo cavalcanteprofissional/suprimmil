@@ -11,8 +11,8 @@ Use **CONTENT.md** (arquivo irmão deste) como única fonte de conteúdo textual
 ## 1. Stack implementada
 
 - **Framework:** Next.js 15 (App Router) + TypeScript
-- **Estilo:** Tailwind CSS v4 + shadcn/ui
-- **Animações:** Framer Motion (fade-in, count-up)
+- **Estilo:** Tailwind CSS v4 + shadcn/ui + Base UI (Select)
+- **Animações:** Framer Motion (fade-in, count-up, gear) + GSAP/ScrollTrigger (timeline)
 - **Ícones:** lucide-react
 - **Conteúdo:** Estático via `lib/navigation.ts` + markdown de referência (CONTENT.md)
 - **Formulários:** Link `wa.me` (sem backend)
@@ -21,13 +21,13 @@ Use **CONTENT.md** (arquivo irmão deste) como única fonte de conteúdo textual
 
 ---
 
-## 2. Arquitetura de páginas (v0.1.0)
+## 2. Arquitetura de páginas (v0.3.0)
 
-1. **`/` (Home)** — Hero, contadores (16+ anos, 5.300+ m², 3 estados), O Grupo, MVV, Certificações, Áreas de Atuação, Diferenciais, CTA Final
-2. **`/empresa`** — Sobre o Grupo, MVV, diferenciais, timeline desde 2010
+1. **`/` (Home)** — Hero, contadores (16+ anos, 5.300+ m², 3 estados), O Grupo, MVV, Certificações, Áreas de Atuação, Diferenciais, CTA Final, Clientes/Parceiros
+2. **`/empresa`** — Sobre o Grupo, MVV, diferenciais, timeline com GSAP/ScrollTrigger desde 2010
 3. **`/servicos`** — 6 áreas de atuação + Estrutura e Capacidade Técnica (parque de máquinas, frota, controle de qualidade)
-4. **`/contato`** — Dois blocos regionais (Norte e Nordeste), formulário via wa.me, mapa com 3 unidades
-5. **`/trabalhe-conosco`** — Formulário de candidatura via wa.me com seleção de área
+4. **`/contato`** — Dois blocos regionais (Norte e Nordeste), formulário via wa.me com Select @base-ui, mapa com 3 unidades
+5. **`/trabalhe-conosco`** — Formulário de candidatura via wa.me com Select @base-ui
 6. **Rodapé** — Endereços (PA + CE), contatos por região, redes sociais
 
 ---
@@ -51,10 +51,34 @@ Alterar dados de contato **apenas** em `navigation.ts` — os componentes import
 
 ---
 
-## 5. Pendências técnicas
+## 5. Componentes por camada
 
-- [ ] GSAP + ScrollTrigger na timeline da empresa (dependência instalada, não implementada)
-- [ ] Substituir `<select>` nativo no `/trabalhe-conosco` por componente shadcn
-- [ ] Atualizar coordenadas do Google Maps com endereços reais (clientes)
-- [ ] Animações adicionais (micro-interações, hover states)
+### `src/components/ui/` (shadcn/Base UI)
+- `button.tsx` — @base-ui/react/button com cva variants
+- `card.tsx` — div-based card com header/footer/content
+- `input.tsx` — @base-ui/react/input
+- `label.tsx` — label acessível
+- `textarea.tsx` — textarea nativo estilizado
+- `select.tsx` — @base-ui/react/select (Root, Trigger, Value, Popup, List, Item)
+
+### `src/components/animations/`
+- `fade-in.tsx` — Wrapper Framer Motion (opacity + translate)
+- `count-up.tsx` — Contagem animada com requestAnimationFrame
+- `gear-decoration.tsx` — SVG gear giratório (Framer Motion)
+- `timeline.tsx` — Timeline com GSAP/ScrollTrigger (fade/slide + linha animada)
+
+### `src/components/layout/`
+- `header.tsx` — Nav fixa com mobile menu hamburguer
+- `footer.tsx` — Footer 4 colunas: descrição + navegação + contatos + endereços
+
+### `src/components/sections/`
+- `clientes-parceiros.tsx` — Grid de logos com gear animado ao fundo
+
+---
+
+## 6. Pendências técnicas
+
+- [ ] Responsividade mobile-first (testar breakpoints sistematicamente)
+- [ ] Contraste AA em toda a aplicação
 - [ ] Lighthouse 90+ (acessibilidade, performance)
+- [ ] Animações adicionais (micro-interações, hover states refinados)

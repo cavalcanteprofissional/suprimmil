@@ -1,13 +1,15 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { FadeIn } from "@/components/animations/fade-in"
 import { GearDecoration } from "@/components/animations/gear-decoration"
+import { Timeline } from "@/components/animations/timeline"
 import { companyInfo } from "@/lib/navigation"
 
 export const metadata: Metadata = {
   title: "Empresa",
   description:
-    "Conheça o Grupo Suprimmil — holding de metalmecânica e eletromecânica com unidades no Pará, Ceará e São Paulo desde 2010.",
+    "Conheça a história, missão, visão e valores do Grupo Suprimmil — holding de metalmecânica e eletromecânica com unidades no Pará, Ceará e São Paulo. Mais de 5.300 m² de instalações desde 2010.",
 }
 
 const values = [
@@ -66,7 +68,7 @@ export default function EmpresaPage() {
             <span className="text-sm font-semibold text-accent-500 uppercase tracking-wider">
               Empresa
             </span>
-            <h1 className="mt-3 text-4xl lg:text-5xl font-bold text-white">
+            <h1 className="mt-3 text-4xl lg:text-5xl font-bold text-white font-heading">
               Sobre o Grupo Suprimmil
             </h1>
             <p className="mt-6 text-lg text-light-300 leading-relaxed">
@@ -79,9 +81,10 @@ export default function EmpresaPage() {
       {/* Sobre */}
       <section className="bg-light-100">
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
+          <FadeIn>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-dark-500">
+              <h2 className="text-3xl lg:text-4xl font-bold text-dark-500 font-heading">
                 Excelência em metalmecânica e eletromecânica
               </h2>
               <p className="mt-6 text-base text-dark-100 leading-relaxed">
@@ -105,20 +108,22 @@ export default function EmpresaPage() {
               </span>
             </div>
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Missão / Visão / Valores */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
+          <FadeIn>
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark-500">
+            <h2 className="text-3xl lg:text-4xl font-bold text-dark-500 font-heading">
               Missão, Visão e Valores
             </h2>
           </div>
           <div className="mt-12 grid lg:grid-cols-3 gap-8">
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500">Missão</h3>
+              <h3 className="text-xl font-bold text-dark-500 font-heading">Missão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
                 Atender todas as expectativas em fabricação metalmecânica industrial
                 e na distribuição de materiais metalúrgicos, com responsabilidade
@@ -126,14 +131,14 @@ export default function EmpresaPage() {
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500">Visão</h3>
+              <h3 className="text-xl font-bold text-dark-500 font-heading">Visão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
                 Ser referência em fabricação mecânica industrial e na distribuição de
                 produtos metalúrgicos na região Norte e Nordeste do Brasil.
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500">Valores</h3>
+              <h3 className="text-xl font-bold text-dark-500 font-heading">Valores</h3>
               <ul className="mt-4 space-y-2">
                 {values.map((v) => (
                   <li key={v} className="flex items-start gap-2 text-base text-dark-100">
@@ -144,6 +149,7 @@ export default function EmpresaPage() {
               </ul>
             </div>
           </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -151,8 +157,9 @@ export default function EmpresaPage() {
       <section className="relative bg-dark-500 overflow-hidden">
         <GearDecoration size={200} speed={30} direction="cw" opacity={0.04} className="-top-12 -left-12 hidden lg:block" />
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
+          <FadeIn>
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white font-heading">
               Nossos Diferenciais
             </h2>
           </div>
@@ -162,40 +169,30 @@ export default function EmpresaPage() {
                 key={item.title}
                 className="p-6 rounded-xl bg-dark-400 border border-white/5"
               >
-                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-white font-heading">{item.title}</h3>
                 <p className="mt-2 text-sm text-light-400">{item.desc}</p>
               </div>
             ))}
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Timeline */}
       <section className="bg-light-100">
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
+          <FadeIn>
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark-500">
+            <h2 className="text-3xl lg:text-4xl font-bold text-dark-500 font-heading">
               Nossa Trajetória
             </h2>
             <p className="mt-4 text-base text-dark-100">
               Desde 2010 construindo uma história de excelência industrial.
             </p>
           </div>
-          <div className="mt-12 max-w-2xl mx-auto">
-            {timeline.map((item, i) => (
-              <div key={i} className="relative flex gap-6 pb-8 last:pb-0">
-                <div className="flex flex-col items-center">
-                  <div className="h-3 w-3 rounded-full bg-accent-500 ring-4 ring-light-100 shrink-0" />
-                  {i < timeline.length - 1 && (
-                    <div className="w-px flex-1 bg-light-400 mt-1" />
-                  )}
-                </div>
-                <div>
-                  <span className="text-sm font-bold text-accent-500">{item.year}</span>
-                  <p className="mt-1 text-base text-dark-100">{item.text}</p>
-                </div>
-              </div>
-            ))}
+          </FadeIn>
+          <div className="mt-12">
+            <Timeline items={timeline} />
           </div>
         </div>
       </section>
@@ -204,7 +201,8 @@ export default function EmpresaPage() {
       <section className="relative bg-dark-500 overflow-hidden">
         <GearDecoration size={180} speed={35} direction="ccw" opacity={0.04} className="-bottom-10 -right-10 hidden lg:block" />
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white">
+          <FadeIn>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white font-heading">
             Vamos trabalhar juntos?
           </h2>
           <p className="mt-4 text-lg text-light-400 max-w-xl mx-auto">
@@ -217,6 +215,7 @@ export default function EmpresaPage() {
               </Button>
             </Link>
           </div>
+          </FadeIn>
         </div>
       </section>
     </>
