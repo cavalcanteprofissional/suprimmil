@@ -22,6 +22,8 @@ Site institucional do Grupo Suprimmil, holding de metalmecânica e eletromecâni
 ## Funcionalidades
 
 - Design 100% institucional B2B
+- **13 fotos reais do cliente** em next/image com lazy loading e aspect-ratio 4:3
+- Ícones lucide-react com hover effects nos cards (Serviços, MVV, Estrutura)
 - Botão WhatsApp flutuante + Voltar ao topo
 - Formulários com client handler → wa.me
 - Select acessível via @base-ui
@@ -44,3 +46,4 @@ npm run build   # produção
 [v0.2.0] — 2026-07-13 — Conteúdo real, engrenagens, clientes/parceiros  
 [v0.3.0] — 2026-07-15 — Select, Timeline GSAP, acessibilidade, responsividade  
 [v0.4.0] — 2026-07-15 — WhatsApp Float, Back to Top, micro-interações, SEO final
+[v0.5.0] — 2026-07-17 — Fotos reais (13), ícones nos cards, hover effects, diferenciais com imagem

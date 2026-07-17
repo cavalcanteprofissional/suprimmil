@@ -1,6 +1,7 @@
+import Image from "next/image"
 import Link from "next/link"
 import type { Metadata } from "next"
-import { Phone, Settings, Truck, HardHat, Wrench, Cog, Package } from "lucide-react"
+import { Phone, Settings, Truck, HardHat, Wrench, Cog, Package, Target, Eye, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { FadeIn } from "@/components/animations/fade-in"
 import { CountUp } from "@/components/animations/count-up"
@@ -200,11 +201,15 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <div className="bg-dark-300 rounded-2xl aspect-[4/3] flex items-center justify-center">
-              <span className="text-light-500 text-sm">
-                {/* TODO: substituir por foto real da empresa */}
-                [Imagem institucional]
-              </span>
+            <div className="rounded-2xl aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/home-grupo.jpg"
+                alt="Instalações do Grupo Suprimmil em Barcarena-PA"
+                width={800}
+                height={600}
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
           </div>
           </FadeIn>
@@ -216,24 +221,33 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <FadeIn>
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-            <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500 font-heading">Missão</h3>
+            <div className="group p-8 rounded-2xl bg-light-100 border border-light-300 hover:-translate-y-1 hover:shadow-lg transition-all text-center">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 mb-4 mx-auto">
+                <Target className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Missão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
                 Atender todas as expectativas em fabricação metalmecânica industrial
                 e na distribuição de materiais metalúrgicos, com responsabilidade
                 socioambiental.
               </p>
             </div>
-            <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500 font-heading">Visão</h3>
+            <div className="group p-8 rounded-2xl bg-light-100 border border-light-300 hover:-translate-y-1 hover:shadow-lg transition-all text-center">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 mb-4 mx-auto">
+                <Eye className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Visão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
                 Ser referência em fabricação mecânica industrial e na distribuição de
                 produtos metalúrgicos na região Norte e Nordeste do Brasil.
               </p>
             </div>
-            <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500 font-heading">Valores</h3>
-              <ul className="mt-4 space-y-2">
+            <div className="group p-8 rounded-2xl bg-light-100 border border-light-300 hover:-translate-y-1 hover:shadow-lg transition-all text-center">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 mb-4 mx-auto">
+                <Heart className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Valores</h3>
+              <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-left">
                 {values.map((v) => (
                   <li key={v} className="flex items-start gap-2 text-base text-dark-100">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500" />

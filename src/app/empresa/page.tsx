@@ -1,3 +1,5 @@
+import { Target, Eye, Heart } from "lucide-react"
+import Image from "next/image"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -28,22 +30,27 @@ const diferenciais = [
   {
     title: "Atuação Multi-Estado",
     desc: "Presença no Pará, Ceará e São Paulo — capilaridade para atender sua indústria onde estiver.",
+    image: "/images/diferencial-atuacao.jpg",
   },
   {
     title: "Parque de Máquinas",
     desc: "Tornos CNC, furadeira radial, fresadora, plaina, corte plasma e oxicorte — capacidade de usinagem de peças até 3m de diâmetro.",
+    image: "/images/diferencial-parque.jpg",
   },
   {
     title: "Frota Própria",
     desc: "Caminhão 3/4 e caminhões Munk de 10 e 12 toneladas para agilidade na entrega e montagem.",
+    image: "/images/diferencial-frota.jpg",
   },
   {
     title: "Equipe Especializada",
     desc: "Engenheiros e técnicos com especializações comprovadas em caldeiraria, usinagem e soldagem.",
+    image: "/images/diferencial-equipe.jpg",
   },
   {
     title: "Controle de Qualidade",
     desc: "Rigoroso controle durante todo o processo produtivo, garantindo um produto final consistente.",
+    image: "/images/diferencial-qualidade.jpg",
   },
 ]
 
@@ -101,11 +108,15 @@ export default function EmpresaPage() {
                 cosméticos, alimentício e geração de energia.
               </p>
             </div>
-            <div className="bg-dark-300 rounded-2xl aspect-[4/3] flex items-center justify-center">
-              <span className="text-light-500 text-sm">
-                {/* TODO: substituir por foto real da empresa */}
-                [Imagem institucional]
-              </span>
+            <div className="rounded-2xl aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/empresa-sobre.jpg"
+                alt="Fábrica do Grupo Suprimmil — caldeiraria e solda industrial"
+                width={800}
+                height={600}
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
           </div>
           </FadeIn>
@@ -122,24 +133,33 @@ export default function EmpresaPage() {
             </h2>
           </div>
           <div className="mt-12 grid lg:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500 font-heading">Missão</h3>
+            <div className="group p-8 rounded-2xl bg-light-100 border border-light-300 hover:-translate-y-1 hover:shadow-lg transition-all text-center">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 mb-4 mx-auto">
+                <Target className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Missão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
                 Atender todas as expectativas em fabricação metalmecânica industrial
                 e na distribuição de materiais metalúrgicos, com responsabilidade
                 socioambiental.
               </p>
             </div>
-            <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500 font-heading">Visão</h3>
+            <div className="group p-8 rounded-2xl bg-light-100 border border-light-300 hover:-translate-y-1 hover:shadow-lg transition-all text-center">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 mb-4 mx-auto">
+                <Eye className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Visão</h3>
               <p className="mt-4 text-base text-dark-100 leading-relaxed">
                 Ser referência em fabricação mecânica industrial e na distribuição de
                 produtos metalúrgicos na região Norte e Nordeste do Brasil.
               </p>
             </div>
-            <div className="p-8 rounded-2xl bg-light-100 border border-light-300">
-              <h3 className="text-xl font-bold text-dark-500 font-heading">Valores</h3>
-              <ul className="mt-4 space-y-2">
+            <div className="group p-8 rounded-2xl bg-light-100 border border-light-300 hover:-translate-y-1 hover:shadow-lg transition-all text-center">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 mb-4 mx-auto">
+                <Heart className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Valores</h3>
+              <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-left">
                 {values.map((v) => (
                   <li key={v} className="flex items-start gap-2 text-base text-dark-100">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500" />
@@ -169,6 +189,16 @@ export default function EmpresaPage() {
                 key={item.title}
                 className="p-6 rounded-xl bg-dark-400 border border-white/5"
               >
+                <div className="rounded-lg aspect-[4/3] overflow-hidden mb-4">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={800}
+                    height={600}
+                    className="object-cover w-full h-full"
+                    loading="lazy"
+                  />
+                </div>
                 <h3 className="text-lg font-semibold text-white font-heading">{item.title}</h3>
                 <p className="mt-2 text-sm text-light-400">{item.desc}</p>
               </div>

@@ -1,6 +1,7 @@
+import Image from "next/image"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Settings, Truck, HardHat, Wrench, Cog, Package } from "lucide-react"
+import { Settings, Truck, HardHat, Wrench, Cog, Package, Scissors, Hammer, Gauge, Navigation, CheckCircle, Palette } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { GearDecoration } from "@/components/animations/gear-decoration"
 import { companyInfo } from "@/lib/navigation"
@@ -150,11 +151,15 @@ export default function ServicosPage() {
                         ))}
                       </ul>
                     </div>
-                    <div className="bg-dark-300 rounded-2xl aspect-[4/3] flex items-center justify-center">
-                      <span className="text-light-500 text-sm">
-                        {/* TODO: substituir por foto real */}
-                        [Imagem {service.title}]
-                      </span>
+                    <div className="rounded-2xl aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={`/images/servico-${service.id}.jpg`}
+                        alt={`Serviço de ${service.title} — Grupo Suprimmil`}
+                        width={800}
+                        height={600}
+                        className="object-cover w-full h-full"
+                        loading="lazy"
+                      />
                     </div>
                   </div>
                 </div>
@@ -180,8 +185,11 @@ export default function ServicosPage() {
             </p>
           </div>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500 font-heading">Corte CNC</h3>
+            <div className="group p-6 rounded-xl bg-light-100 border border-light-300 hover:border-accent-500/30 transition-all">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 group-hover:bg-accent-500 group-hover:text-white transition-colors mb-4">
+                <Scissors className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Corte CNC</h3>
               <ul className="mt-4 space-y-2">
                 {["Corte Oxicorte", "Corte Plasma", "Mesa de Corte Plasma CNC"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">
@@ -191,8 +199,11 @@ export default function ServicosPage() {
                 ))}
               </ul>
             </div>
-            <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500 font-heading">Caldeiraria</h3>
+            <div className="group p-6 rounded-xl bg-light-100 border border-light-300 hover:border-accent-500/30 transition-all">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 group-hover:bg-accent-500 group-hover:text-white transition-colors mb-4">
+                <Hammer className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Caldeiraria</h3>
               <ul className="mt-4 space-y-2">
                 {["Calandragem de chapas e perfis", "Fabricação de estruturas metálicas", "Tanques e dutos industriais"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">
@@ -202,8 +213,11 @@ export default function ServicosPage() {
                 ))}
               </ul>
             </div>
-            <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500 font-heading">Usinagem</h3>
+            <div className="group p-6 rounded-xl bg-light-100 border border-light-300 hover:border-accent-500/30 transition-all">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 group-hover:bg-accent-500 group-hover:text-white transition-colors mb-4">
+                <Gauge className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Usinagem</h3>
               <p className="mt-2 text-xs text-dark-100">Peças de até 3 m de diâmetro</p>
               <ul className="mt-4 space-y-2">
                 {["Torno CNC", "Torno Ø1000 x 4000 mm", "Torno Ø3000 x 4000 mm", "Furadeira Radial", "Fresadora", "Plaina"].map((item) => (
@@ -214,8 +228,11 @@ export default function ServicosPage() {
                 ))}
               </ul>
             </div>
-            <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500 font-heading">Frota Própria</h3>
+            <div className="group p-6 rounded-xl bg-light-100 border border-light-300 hover:border-accent-500/30 transition-all">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 group-hover:bg-accent-500 group-hover:text-white transition-colors mb-4">
+                <Navigation className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Frota Própria</h3>
               <ul className="mt-4 space-y-2">
                 {["Caminhão 3/4", "Munk 12 toneladas", "Munk 10 toneladas"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">
@@ -225,8 +242,11 @@ export default function ServicosPage() {
                 ))}
               </ul>
             </div>
-            <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500 font-heading">Controle de Qualidade</h3>
+            <div className="group p-6 rounded-xl bg-light-100 border border-light-300 hover:border-accent-500/30 transition-all">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 group-hover:bg-accent-500 group-hover:text-white transition-colors mb-4">
+                <CheckCircle className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Controle de Qualidade</h3>
               <ul className="mt-4 space-y-2">
                 {["Inspeção durante processo produtivo", "Garantia de produto final consistente", "Rastreabilidade de materiais"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">
@@ -236,8 +256,11 @@ export default function ServicosPage() {
                 ))}
               </ul>
             </div>
-            <div className="p-6 rounded-xl bg-light-100 border border-light-300">
-              <h3 className="text-lg font-semibold text-dark-500 font-heading">Pintura e Acabamento</h3>
+            <div className="group p-6 rounded-xl bg-light-100 border border-light-300 hover:border-accent-500/30 transition-all">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-500/10 text-accent-500 group-hover:bg-accent-500 group-hover:text-white transition-colors mb-4">
+                <Palette className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-semibold text-dark-500 group-hover:text-accent-500 transition-colors font-heading">Pintura e Acabamento</h3>
               <ul className="mt-4 space-y-2">
                 {["Jateamento e pintura homologados", "Pintura industrial", "Tratamento anticorrosivo"].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-dark-100">

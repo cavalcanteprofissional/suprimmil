@@ -1,8 +1,8 @@
 # TODO — Implementação Site Grupo Suprimmil
 
-> Status geral: 🟢 Quase completo — aguardando deploy e conteúdo do cliente
+> Status geral: 🟢 Implementação em dia
 > Stack: Next.js 15 + TypeScript + Tailwind v4 + shadcn/ui + Base UI
-> Versão atual: 0.4.0
+> Versão atual: 0.5.0
 
 ---
 
@@ -69,20 +69,66 @@
 
 ---
 
-## 🔶 Pendente
+## 🔶 Próximos Passos
 
-### Fase 10 — Deploy e Validação
+### S1 ✅ — Substituição das Artes Placeholders (8 imagens) + Ícones
+
+**Nota:** "Manutenção Industrial" e "Pintura Industrial" foram unificadas — já refletido no código como subitens dos cards existentes.
+
+- [x] Fotos reais do cliente inseridas em `public/images/`
+- [x] Home: placeholder `[Imagem institucional]` → `<Image src="/images/home-grupo.jpg">`
+- [x] Empresa: placeholder `[Imagem institucional]` → `<Image src="/images/empresa-sobre.jpg">`
+- [x] Serviços: 6 placeholders `[Imagem {service.title}]` → `<Image src={/images/servico-${service.id}.jpg}>`
+- [x] next/image com lazy loading, aspect-ratio 4:3, object-cover em todas
+- [x] Ícones lucide-react nos 6 cards de "Estrutura e Parque de Máquinas" (Scissors, Hammer, Gauge, Navigation, CheckCircle, Palette)
+- [x] Hover efeito nos cards (accent-500, group-hover) replicando padrão da Home
+- [x] Ícones lucide-react nos cards Missão/Visão/Valores (Target, Eye, Heart)
+- [x] Hover pop-up nos cards MVV (-translate-y-1, shadow-lg)
+- [x] Cards MVV centralizados (ícone + título)
+- [x] Valores em grid de 2 colunas
+- [x] lint + typecheck ok
+
+### S1.1 ✅ — Fotos nos cards "Nossos Diferenciais" (Empresa)
+
+- [x] Imagens reais nos 5 cards (Parque de Máquinas, Controle de Qualidade, Equipe, Frota, Atuação)
+- [x] next/image com lazy loading, aspect-ratio 4:3, object-cover
+- [x] lint + typecheck ok
+
+### S1.2 ✅ — Ajuste layout Trabalhe Conosco
+
+- [x] Grid do formulário e card "Junte-se a nós" com larguras iguais no desktop
+
+### S2 — Seção / Página de Cases e Portfólio (oportunidade)
+
+CONTENT.md lista **15 projetos reais nomeados** (Natura Estação Cosmética, Albras Top Lifting, Hydro Alunorte, Suzano...) com cliente e escopo. São prova social forte e não estão no site.
+
+- [ ] Avaliar com cliente: seção na Home + página dedicada `/cases`?
+- [ ] Definir formato: cards com cliente + descrição + imagem do projeto
+- [ ] Implementar rota e componente
+
+### S3 — Performance Lighthouse (target 90+)
+
+- [ ] Otimizar imagens (next/image, lazy loading, formato webp)
+- [ ] Verificar CLS (layout shift) — especialmente header fixo e animações
+- [ ] Revisar contraste de cor (AA)
+- [ ] Testar com ferramenta Lighthouse e ajustar
+
+### S4 — Deploy e Validação
+
 - [ ] Deploy na Vercel
-- [ ] Lighthouse 90+
-- [ ] Revisão de contraste AA
+- [ ] Configurar domínio
+- [ ] Validar SEO (sitemap, robots, OG tags, schema.org)
+- [ ] Testar formulários wa.me em produção
+
+---
 
 ### Gap List (conteúdo pendente — reportar ao cliente)
-- [ ] Números reais (funcionários, projetos)
-- [ ] Fotos reais de obras/equipe/instalações (8 placeholders)
+- [ ] Números reais (funcionários, projetos concluídos) — para contadores na Home
+- [ ] Fotos reais de obras/equipe/instalações (pode substituir os placeholders acima)
 - [ ] Nomes exatos dos logos de parceiros não identificados (5)
 - [ ] Autorização de uso de marca de cada cliente/parceiro
 - [ ] Depoimento/avaliação de cliente 2024/25
-- [ ] CNPJ e razão social de cada empresa do grupo
-- [ ] Status da N'Brazil Amortecedores
-- [ ] Coordenadas exatas do Google Maps
-- [ ] Confirmar se contatos legados (vendasv, 3013-7730) continuam ativos
+- [ ] CNPJ e razão social de cada empresa do grupo (para rodapé)
+- [ ] Status da N'Brazil Amortecedores ("em breve" no PPT — verificar)
+- [ ] Coordenadas exatas do Google Maps (Barcarena, Ananindeua, Maracanaú)
+- [ ] Confirmar se contatos legados (vendasv@suprimmil.com.br, 91 3013-7730) continuam ativos

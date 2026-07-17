@@ -1,0 +1,42 @@
+Contatos por Região:
+
+Norte: telefone, 91993934925; email_gerencia, -; email_comercial, -; endereço, -.
+Nordeste: telefone, 91993934925; email_gerencia, -; email_comercial, -; endereço, -.
+
+
+Nomeclaturas dos diretórios de Material Fotográfico:
+frs = Serviço de Fabricação e Recuperação de Shuts
+frt = Serviço de Fabricação e Recuperação de Tanques
+rh = Serviços de Recuperação de Hélices
+rth = Fabricação e Recuperação de Transportadores Helicoidais
+rtc = Fabricação e Recuperação de Trocadores de Calor
+etc = Fabricação de Espelhos de Trocadores de Calor
+memc = Fabricação e Montagem da Estrutura Metálica de Cobertura
+rv = Serviços de Recuperação de Válvulas
+ra = Recuperação de Aquecedor
+cq = Controle de Qualidade
+
+fmm = Fabricação e Montagem Metalmecânica
+tp = Top Lifting
+ptg = Planta de   Tratamento de Gases
+
+lista de principais clientes:
+Albas, Agropalma, Brasilit, Hydro, Hidrovias do Brasil, Natura, Sinobras, Sumitomo Chemical, Suzano, Symrise.
+
+lista de principais parceiros/fornecedores:
+Açotuba, Coppermetal, Ferramentas Gerais, Gerdau, Metalique, Vonder.
+
+Arquitetura do Projeto Trifolder:
+
+Nomeclatura Mockups:
+(x) = (x)side
+f = front
+b = back
+side = Left | Middle | Right
+
+fr = FrontRight
+fl = FrontLeft
+fm = FrontMiddle
+br = BackRight
+bl = BackLeft
+bm = BackMiddle

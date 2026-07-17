@@ -34,7 +34,27 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/), e o projeto 
 
 ---
 
-## [0.3.0] — 2026-07-15
+## [0.5.0] — 2026-07-17
+
+### Adicionado
+
+- **8 fotos reais do cliente** em `public/images/`: home-grupo.jpg, empresa-sobre.jpg, servico-{engenharia,suprimentos,construcao,fabricacao,usinagem,materiais}.jpg
+- **next/image** nos placeholders: lazy loading, aspect-ratio 4:3, object-fit cover em Home, Empresa e Serviços
+- **Ícones "Estrutura e Parque de Máquinas"**: 6 cards com lucide-react (Scissors, Hammer, Gauge, Navigation, CheckCircle, Palette) + hover accent-500
+- **Ícones Missão/Visão/Valores**: Target, Eye, Heart com bg-accent-500/10 e hover pop-up
+- **Grid 2 colunas na lista Valores**: `grid grid-cols-2` para melhor aproveitamento do card
+- **5 fotos nos cards "Nossos Diferenciais"**: Empresa — Parque de Máquinas, Controle de Qualidade, Equipe, Frota, Atuação Multi-Estado
+
+### Modificado
+
+- **Home**: placeholder `[Imagem institucional]` → `<Image>` com foto real
+- **Empresa**: placeholder `[Imagem institucional]` → `<Image>` com foto real
+- **Serviços**: 6 placeholders `[Imagem {service.title}]` → `<Image>` dinâmico via `service.id`
+- **Cards Estrutura**: ícones reposicionados com cores accent-500 e hover group (bg → solid, texto → white, borda accent)
+- **Cards MVV**: centralizados (text-center, mx-auto), hover com elevação (-translate-y-1 + shadow-lg) — Home e Empresa
+- **Diferenciais Empresa**: cards agora com foto (aspect-ratio 4:3, object-cover) acima do título
+- **Trabalhe Conosco**: grid ajustado para `lg:grid-cols-2` — cards "Junte-se a nós" e formulário com mesma largura no desktop
+- **Versão**: bump 0.4.0 → 0.5.0
 
 ### Adicionado
 

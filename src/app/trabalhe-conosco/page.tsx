@@ -44,9 +44,9 @@ export default function TrabalheConoscoPage() {
 
       <section className="bg-light-100">
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12">
             {/* Texto institucional */}
-            <div className="lg:col-span-2">
+            <div>
               <h2 className="text-2xl font-bold text-dark-500 font-heading">
                 Junte-se a nós
               </h2>
@@ -71,7 +71,7 @@ export default function TrabalheConoscoPage() {
             </div>
 
             {/* Formulário */}
-            <div className="lg:col-span-3">
+            <div>
               <div className="p-8 rounded-2xl bg-white border border-light-300">
                 <h2 className="text-2xl font-bold text-dark-500 font-heading">
                   Formulário de Candidatura
