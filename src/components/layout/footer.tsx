@@ -17,14 +17,21 @@ export function Footer() {
     <footer className="bg-dark-500 border-t border-white/5">
       <div className="mx-auto max-w-7xl px-4 lg:px-8 py-12 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-4">
-          <div className="lg:col-span-1">
-            <Link href="/" className="block mb-4">
+          <div className="flex items-start gap-4 lg:block lg:col-span-1">
+            <Link href="/" className="shrink-0 mb-0 lg:mb-4">
+              <Image
+                src="/icon.svg"
+                alt="Grupo Suprimmil"
+                width={120}
+                height={120}
+                className="lg:hidden w-16 sm:w-20 h-auto"
+              />
               <Image
                 src="/logo.svg"
                 alt="Grupo Suprimmil"
                 width={360}
                 height={90}
-                className="w-full max-w-xs h-auto"
+                className="hidden lg:block w-full max-w-xs h-auto"
               />
             </Link>
             <p className="text-sm text-light-400 leading-relaxed max-w-xs">
@@ -145,9 +152,21 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-light-500">
           <p>&copy; {new Date().getFullYear()} Grupo Suprimmil. Todos os direitos reservados.</p>
-          <p>
-            CNPJ: <span className="text-light-400">[A CONFIRMAR COM CLIENTE]</span>
-          </p>
+          <a
+            href="https://github.com/cavalcanteprofissional"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-light-400 hover:text-accent-500 transition-colors group"
+          >
+            <span className="text-xs">Produzido por</span>
+            <Image
+              src="/images/assinatura-lucas.png"
+              alt="Lucas Cavalcante"
+              width={103}
+              height={80}
+              className="h-7 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+            />
+          </a>
         </div>
       </div>
     </footer>

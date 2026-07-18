@@ -44,10 +44,6 @@ export const metadata: Metadata = {
     "região Norte",
     "região Nordeste",
   ],
-  icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-  },
   openGraph: {
     title: "Grupo Suprimmil",
     description:

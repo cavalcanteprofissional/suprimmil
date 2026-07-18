@@ -98,6 +98,42 @@
 
 - [x] Grid do formulário e card "Junte-se a nós" com larguras iguais no desktop
 
+### S1.3 ✅ — Alinhamento caixas Contato e Trabalhe Conosco
+
+**Problema:** cards de cada lado ainda não alinhados visualmente entre si no desktop.
+
+**Solução aplicada (Contato):**
+- Envolvido conteúdo da coluna esquerda em `p-8 rounded-2xl bg-white border border-light-300 h-full` (mesmo visual do form)
+- Reduzido padding dos cards de contato internos de `p-5` → `p-4` (já dentro de container p-8)
+- Adicionado `h-full` ao card do formulário (esticar via CSS Grid)
+
+- [x] Contato: wrap coluna esquerda em card p-8
+- [x] Contato: inner cards p-5 → p-4
+- [x] Contato: form card h-full
+- [x] lint + typecheck ok
+- [x] Trabalhe Conosco: h2 + p movidos p/ dentro do card p-8, card aninhado removido, ambos os lados como cards diretos no grid
+- [x] lint + typecheck ok
+- [x] S1.3 concluído
+
+### S1.4 ✅ — UI/UX Footer: logo menor no mobile
+
+- [x] Logo: `max-w-xs` → `max-w-[200px] lg:max-w-xs`
+- [x] lint + typecheck ok
+
+### S1.5 ✅ — Footer mobile: icon.svg no lugar de logo.svg
+
+- [x] `icon.svg` consolidado em `src/app/icon.svg` (local ideal Next.js 15)
+- [x] Duplicatas removidas (raiz e public/)
+- [x] Metadata: `icons` removido do layout.tsx (auto-detectado pelo file convention)
+- [x] Footer: `icon.svg` no mobile (lg:hidden) + `logo.svg` no desktop (hidden lg:block)
+- [x] lint + typecheck ok
+
+### S1.6 ✅ — Assinatura "Produzido por" no footer
+
+- [x] Imagem movida para `public/images/assinatura-lucas.png`
+- [x] Footer: CNPJ substituído por assinatura com link para GitHub
+- [x] lint + typecheck ok
+
 ### S2 — Seção / Página de Cases e Portfólio (oportunidade)
 
 CONTENT.md lista **15 projetos reais nomeados** (Natura Estação Cosmética, Albras Top Lifting, Hydro Alunorte, Suzano...) com cliente e escopo. São prova social forte e não estão no site.

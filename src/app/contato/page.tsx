@@ -83,76 +83,80 @@ export default function ContatoPage() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Informações — duas regiões */}
-            <div className="lg:col-span-1 space-y-8">
-              {/* Região Norte */}
-              <div>
-                <h3 className="text-sm font-semibold text-accent-500 uppercase tracking-wider mb-4 font-heading">
-                  Região Norte
-                </h3>
-                <div className="space-y-3">
-                  {contactNorte.map((item) => {
-                    const Icon = item.icon
-                    return (
-                      <a
-                        key={item.label}
-                        href={item.href}
-                        target={item.target}
-                        rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
-                        className="flex items-start gap-3 p-4 rounded-xl bg-white border border-light-300 hover:border-accent-500/30 transition-colors group"
-                      >
-                        <div className="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-lg bg-accent-500/10 text-accent-500 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-                          <Icon className="h-6 w-6 md:h-5 md:w-5" />
-                        </div>
-                        <div>
-                          <span className="text-xs text-light-500 uppercase tracking-wider">
-                            {item.label}
-                          </span>
-                          <p className="text-sm font-medium text-dark-500 mt-0.5">
-                            {item.value}
-                          </p>
-                        </div>
-                      </a>
-                    )
-                  })}
-                </div>
-              </div>
-              {/* Região Nordeste */}
-              <div>
-                <h3 className="text-sm font-semibold text-accent-500 uppercase tracking-wider mb-4 font-heading">
-                  Região Nordeste
-                </h3>
-                <div className="space-y-3">
-                  {contactNordeste.map((item) => {
-                    const Icon = item.icon
-                    return (
-                      <a
-                        key={item.label}
-                        href={item.href}
-                        target={item.target}
-                        rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
-                        className="flex items-start gap-3 p-4 rounded-xl bg-white border border-light-300 hover:border-accent-500/30 transition-colors group"
-                      >
-                        <div className="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-lg bg-accent-500/10 text-accent-500 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-                          <Icon className="h-6 w-6 md:h-5 md:w-5" />
-                        </div>
-                        <div>
-                          <span className="text-xs text-light-500 uppercase tracking-wider">
-                            {item.label}
-                          </span>
-                          <p className="text-sm font-medium text-dark-500 mt-0.5">
-                            {item.value}
-                          </p>
-                        </div>
-                      </a>
-                    )
-                  })}
+            <div className="lg:col-span-1">
+              <div className="p-8 rounded-2xl bg-white border border-light-300 h-full">
+                <div className="space-y-8">
+                  {/* Região Norte */}
+                  <div>
+                    <h3 className="text-sm font-semibold text-accent-500 uppercase tracking-wider mb-4 font-heading">
+                      Região Norte
+                    </h3>
+                    <div className="space-y-3">
+                      {contactNorte.map((item) => {
+                        const Icon = item.icon
+                        return (
+                          <a
+                            key={item.label}
+                            href={item.href}
+                            target={item.target}
+                            rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+                            className="flex items-start gap-3 p-4 rounded-2xl bg-white border border-light-300 hover:border-accent-500/30 transition-colors group"
+                          >
+                            <div className="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-lg bg-accent-500/10 text-accent-500 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
+                              <Icon className="h-6 w-6 md:h-5 md:w-5" />
+                            </div>
+                            <div>
+                              <span className="text-xs text-light-500 uppercase tracking-wider">
+                                {item.label}
+                              </span>
+                              <p className="text-sm font-medium text-dark-500 mt-0.5">
+                                {item.value}
+                              </p>
+                            </div>
+                          </a>
+                        )
+                      })}
+                    </div>
+                  </div>
+                  {/* Região Nordeste */}
+                  <div>
+                    <h3 className="text-sm font-semibold text-accent-500 uppercase tracking-wider mb-4 font-heading">
+                      Região Nordeste
+                    </h3>
+                    <div className="space-y-3">
+                      {contactNordeste.map((item) => {
+                        const Icon = item.icon
+                        return (
+                          <a
+                            key={item.label}
+                            href={item.href}
+                            target={item.target}
+                            rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+                            className="flex items-start gap-3 p-4 rounded-2xl bg-white border border-light-300 hover:border-accent-500/30 transition-colors group"
+                          >
+                            <div className="flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-lg bg-accent-500/10 text-accent-500 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-colors">
+                              <Icon className="h-6 w-6 md:h-5 md:w-5" />
+                            </div>
+                            <div>
+                              <span className="text-xs text-light-500 uppercase tracking-wider">
+                                {item.label}
+                              </span>
+                              <p className="text-sm font-medium text-dark-500 mt-0.5">
+                                {item.value}
+                              </p>
+                            </div>
+                          </a>
+                        )
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Formulário */}
             <div className="lg:col-span-2">
-              <div className="p-8 rounded-2xl bg-white border border-light-300">
+              <div className="p-8 rounded-2xl bg-white border border-light-300 h-full">
                 <h2 className="text-2xl font-bold text-dark-500 font-heading">
                   Envie sua mensagem
                 </h2>

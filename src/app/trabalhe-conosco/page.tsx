@@ -46,7 +46,7 @@ export default function TrabalheConoscoPage() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8 py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Texto institucional */}
-            <div>
+            <div className="p-8 rounded-2xl bg-white border border-light-300">
               <h2 className="text-2xl font-bold text-dark-500 font-heading">
                 Junte-se a nós
               </h2>
@@ -55,7 +55,7 @@ export default function TrabalheConoscoPage() {
                 qualidade e inovação. Se você tem paixão pela indústria e quer
                 fazer parte de uma equipe em crescimento, envie sua candidatura.
               </p>
-              <div className="mt-8 p-6 rounded-xl bg-white border border-light-300">
+              <div className="mt-8">
                 <h3 className="text-sm font-semibold text-dark-500 uppercase tracking-wider font-heading">
                   Áreas de Interesse
                 </h3>
@@ -71,17 +71,15 @@ export default function TrabalheConoscoPage() {
             </div>
 
             {/* Formulário */}
-            <div>
-              <div className="p-8 rounded-2xl bg-white border border-light-300">
-                <h2 className="text-2xl font-bold text-dark-500 font-heading">
-                  Formulário de Candidatura
-                </h2>
-                <p className="mt-2 text-sm text-dark-100">
-                  Preencha seus dados e envie seu currículo pelo WhatsApp.
-                </p>
+            <div className="p-8 rounded-2xl bg-white border border-light-300">
+              <h2 className="text-2xl font-bold text-dark-500 font-heading">
+                Formulário de Candidatura
+              </h2>
+              <p className="mt-2 text-sm text-dark-100">
+                Preencha seus dados e envie seu currículo pelo WhatsApp.
+              </p>
 
-                <JobForm />
-              </div>
+              <JobForm />
             </div>
           </div>
         </div>
